@@ -4,6 +4,6 @@ Team 1 for SS2025 Hardware Engineering Lab_ Building Vending Machine
 # Team Member
 Younsuk Choi
 
-Emaan
+Emaan_ Muhammad Emaan Sajid
 
 Leano_ Yuming Wang
