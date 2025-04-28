@@ -5,7 +5,7 @@ Port(
 	A: in STD_LOGIC;
 	B: in STD_LOGIC;
 	Cin: in STD_LOGIC;
-	Sum: our STD_LOGIC;	
+	Sum: out STD_LOGIC;	
 	Cout: out STD_LOGIC
 );
 end fulladder;
