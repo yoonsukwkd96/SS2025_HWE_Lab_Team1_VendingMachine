@@ -10,7 +10,7 @@ Port(
 );
 end fulladder;
 
-architecture structural of fulladder is
+architecture behavior of fulladder is
 component halfadder 
 Port(
 	A: in STD_LOGIC;
@@ -34,4 +34,4 @@ H2 : halfadder port map(
 	Carry => C2
 );
 Cout <= C1 OR C2;
-end structural;
+end behavior;
