@@ -10,8 +10,7 @@ Port(
 );
 end fulladder;
 
-architecture strucural of fulladder is
-
+architecture structural of fulladder is
 component halfadder 
 Port(
 	A: in STD_LOGIC;
