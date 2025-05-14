@@ -1,0 +1,76 @@
+{D:/adder1/half adder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/adder1/half adder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity add1_half
+-- Compiling architecture behavior of add1_half
+
+} {} {}} D:/adder1/FA.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/adder1/FA.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity full_adder
+-- Compiling architecture behavior of full_adder
+
+} {} {}} D:/adder1/adder_substractor.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/adder1/adder_substractor.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity adder_substractor
+-- Compiling architecture behavior of adder_substractor
+
+} {} {}} D:/adder1/RCA_test_bench.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/adder1/RCA_test_bench.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity test
+-- Compiling architecture bench2 of test
+
+} {} {}} D:/adder1/half_adder_test_bench.vhd {2 {vcom -work work -2002 -explicit -stats=none D:/adder1/half_adder_test_bench.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity test
+-- Compiling architecture bench of test
+** Warning: D:/adder1/half_adder_test_bench.vhd(23): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/half_adder_test_bench.vhd(26): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/half_adder_test_bench.vhd(29): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/half_adder_test_bench.vhd(32): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} D:/BCD/BCD_to_7seg.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/BCD/BCD_to_7seg.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity BCD_to_7seg
+-- Compiling architecture behavior of BCD_to_7seg
+
+} {} {}} D:/BCD/4bit_Binary_2_BCD.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/BCD/4bit_Binary_2_BCD.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity B2BC
+-- Compiling architecture behavior of B2BC
+
+} {} {}} {D:/adder1/Ripple carry Adder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {D:/adder1/Ripple carry Adder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity RA
+-- Compiling architecture behavior of RA
+
+} {} {}} D:/adder1/FA_TEST_BENCH.vhd {2 {vcom -work work -2002 -explicit -stats=none D:/adder1/FA_TEST_BENCH.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity test
+-- Compiling architecture bench1 of test
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(26): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(30): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(34): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(38): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(46): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(50): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/FA_TEST_BENCH.vhd(54): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}} D:/adder1/adder_substractor_test_bench.vhd {2 {vcom -work work -2002 -explicit -stats=none D:/adder1/adder_substractor_test_bench.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity test
+-- Compiling architecture bench3 of test
+** Warning: D:/adder1/adder_substractor_test_bench.vhd(42): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/adder_substractor_test_bench.vhd(52): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+** Warning: D:/adder1/adder_substractor_test_bench.vhd(61): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}}
