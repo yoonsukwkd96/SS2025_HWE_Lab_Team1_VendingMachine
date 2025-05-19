@@ -1,0 +1,332 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Eaddsub
+Z0 w1746462078
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 62
+Z3 dC:/Users/emaan/Desktop/hardware engineerin/lab1
+Z4 8C:/Users/emaan/Desktop/hardware engineerin/lab1/4bitadder_subtractor.vhd
+Z5 FC:/Users/emaan/Desktop/hardware engineerin/lab1/4bitadder_subtractor.vhd
+l0
+L4 1
+V02PUPC15E6DG802H:Ukn13
+!s100 Uz_?0LoR]]KO[cSKj5FX22
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1746462668
+!i10b 1
+Z8 !s108 1746462668.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab1/4bitadder_subtractor.vhd|
+Z10 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab1/4bitadder_subtractor.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+DEx4 work 6 addsub 0 22 02PUPC15E6DG802H:Ukn13
+!i122 62
+l27
+L14 29
+VgFSW]nKY_R;faHeJPalW32
+!s100 JETgBNTi`W:X@gl1EN[Bm1
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Efulladder_tb
+Z13 w1745916711
+!i122 57
+R3
+Z14 8C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1tb.vhd
+Z15 FC:/Users/emaan/Desktop/hardware engineerin/lab1/lab1tb.vhd
+l0
+L2 1
+VC6_V]^XQS_A4F55O>bz5k2
+!s100 _9]7:?OV7cGIbSn1KB?[m1
+R6
+32
+Z16 !s110 1746462667
+!i10b 1
+Z17 !s108 1746462667.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1tb.vhd|
+Z19 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1tb.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+DEx4 work 12 fulladder_tb 0 22 C6_V]^XQS_A4F55O>bz5k2
+!i122 57
+l14
+L5 54
+VHkUCT[HmFC4;eJM^]dPEW3
+!s100 HC847D8<;BUS4X2?l?idZ2
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Efulladderexample
+Z20 w1745916650
+!i122 56
+R3
+Z21 8C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1.vhd
+Z22 FC:/Users/emaan/Desktop/hardware engineerin/lab1/lab1.vhd
+l0
+L2 1
+VOIJiQHGnaiD;]aK]e`eUS2
+!s100 gbzcQ?6eTlFeQTT<E`Yz11
+R6
+32
+R16
+!i10b 1
+R17
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1.vhd|
+Z24 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1.vhd|
+!i113 1
+R11
+R12
+Abehavior
+DEx4 work 16 fulladderexample 0 22 OIJiQHGnaiD;]aK]e`eUS2
+!i122 56
+l9
+L8 5
+V7IBiSjn1<mPLDM:Qh^7UZ0
+!s100 5R_KN^K:L0cD3OH]W3jWl0
+R6
+32
+R16
+!i10b 1
+R17
+R23
+R24
+!i113 1
+R11
+R12
+Ehalfadder
+Z25 w1745917642
+R1
+R2
+!i122 58
+R3
+Z26 8C:/Users/emaan/Desktop/hardware engineerin/lab1/halfadder.vhd
+Z27 FC:/Users/emaan/Desktop/hardware engineerin/lab1/halfadder.vhd
+l0
+L4 1
+VbTUA007@C3QC55cEEVSla0
+!s100 j1>e]KGEIdO<hmI^l;[9?1
+R6
+32
+R7
+!i10b 1
+R17
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab1/halfadder.vhd|
+Z29 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab1/halfadder.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z30 DEx4 work 9 halfadder 0 22 bTUA007@C3QC55cEEVSla0
+!i122 58
+l14
+L13 5
+V;=gKd;T:V^bTIiH:JWMad1
+!s100 e3BVmk3U0l1^^d4UdP5mF1
+R6
+32
+R7
+!i10b 1
+R17
+R28
+R29
+!i113 1
+R11
+R12
+Eripple
+Z31 w1746462108
+R1
+R2
+!i122 60
+R3
+Z32 8C:/Users/emaan/model_sim_exercises/ripplecarryadder.vhd
+Z33 FC:/Users/emaan/model_sim_exercises/ripplecarryadder.vhd
+l0
+L3 1
+Vf1GTMYJY5On;^_i:AG>Ld1
+!s100 Rfobck6<gE:XShnD0=NWg1
+R6
+32
+R7
+!i10b 1
+R8
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/model_sim_exercises/ripplecarryadder.vhd|
+Z35 !s107 C:/Users/emaan/model_sim_exercises/ripplecarryadder.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+DEx4 work 6 ripple 0 22 f1GTMYJY5On;^_i:AG>Ld1
+!i122 60
+l27
+L15 46
+V`[7IN3[fkHd7C2e9Y5U?j3
+!s100 U5SI56A>[S_7Z3YTf0HQ13
+R6
+32
+R7
+!i10b 1
+R8
+R34
+R35
+!i113 1
+R11
+R12
+Etb_addsub
+Z36 w1746462645
+R1
+R2
+!i122 63
+R3
+Z37 8C:/Users/emaan/Desktop/hardware engineerin/lab1/tb4bitaddersubtractor.vhd
+Z38 FC:/Users/emaan/Desktop/hardware engineerin/lab1/tb4bitaddersubtractor.vhd
+l0
+L5 1
+V5`RQJPUo[FdZkhcfg4U3d3
+!s100 l3FaM=]b6J_[[=Gh8W<oV1
+R6
+32
+R7
+!i10b 1
+R8
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab1/tb4bitaddersubtractor.vhd|
+Z40 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab1/tb4bitaddersubtractor.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R1
+R2
+Z41 DEx4 work 9 tb_addsub 0 22 5`RQJPUo[FdZkhcfg4U3d3
+!i122 63
+l25
+Z42 L8 49
+Z43 V=P]6P4A<K2jH=[T=1DeBf0
+Z44 !s100 [XdB>nIb2oAP9X7FV8Yh`2
+R6
+32
+R7
+!i10b 1
+R8
+R39
+R40
+!i113 1
+R11
+R12
+Etb_halfadder
+Z45 w1745918083
+R1
+R2
+!i122 59
+R3
+Z46 8C:/Users/emaan/Desktop/hardware engineerin/lab1/tbhalfadder.vhd
+Z47 FC:/Users/emaan/Desktop/hardware engineerin/lab1/tbhalfadder.vhd
+l0
+L4 1
+V?5g:G[6R00T<Q>HSDR<G71
+!s100 =:8n:kTPi;Y4`;PgBF2XM2
+R6
+32
+R7
+!i10b 1
+R8
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab1/tbhalfadder.vhd|
+Z49 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab1/tbhalfadder.vhd|
+!i113 1
+R11
+R12
+Asim
+R30
+R1
+R2
+DEx4 work 12 tb_halfadder 0 22 ?5g:G[6R00T<Q>HSDR<G71
+!i122 59
+l10
+L7 21
+V0zmNVLFSZh;gBIHn1fXVW0
+!s100 h7R24nEP71YW?XXmGiFFU3
+R6
+32
+R7
+!i10b 1
+R8
+R48
+R49
+!i113 1
+R11
+R12
+Etb_ripple
+Z50 w1745919654
+R1
+R2
+!i122 61
+R3
+Z51 8C:/Users/emaan/model_sim_exercises/tb_ripple.vhd
+Z52 FC:/Users/emaan/model_sim_exercises/tb_ripple.vhd
+l0
+L4 1
+Vk2;8M:<A]KT6LmIQEL`>Q0
+!s100 ^f8C@_;2lc5?bW470IjVQ3
+R6
+32
+R7
+!i10b 1
+R8
+Z53 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/model_sim_exercises/tb_ripple.vhd|
+Z54 !s107 C:/Users/emaan/model_sim_exercises/tb_ripple.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R1
+R2
+DEx4 work 9 tb_ripple 0 22 k2;8M:<A]KT6LmIQEL`>Q0
+!i122 61
+l24
+L7 57
+Vf9M]hZ0hQ1eNX<4iS3hX91
+!s100 7T1W:c>DD5>M:GQPAY0H=2
+R6
+32
+R7
+!i10b 1
+R8
+R53
+R54
+!i113 1
+R11
+R12

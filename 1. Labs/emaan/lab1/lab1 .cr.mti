@@ -1,0 +1,62 @@
+{C:/Users/emaan/Desktop/hardware engineerin/lab1/tbhalfadder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/emaan/Desktop/hardware engineerin/lab1/tbhalfadder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_halfadder
+-- Compiling architecture sim of tb_halfadder
+-- Loading entity halfadder
+
+} {} {}} C:/Users/emaan/model_sim_exercises/ripplecarryadder.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/emaan/model_sim_exercises/ripplecarryadder.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ripple
+-- Compiling architecture Behavioral of ripple
+
+} {} {}} {C:/Users/emaan/Desktop/hardware engineerin/lab1/tb4bitaddersubtractor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/emaan/Desktop/hardware engineerin/lab1/tb4bitaddersubtractor.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_addsub
+-- Compiling architecture Behavioral of tb_addsub
+
+} {} {}} {C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1tb.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1tb.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity FullAdder_tb
+-- Compiling architecture behavioral of FullAdder_tb
+
+} {} {}} C:/Users/emaan/model_sim_exercises/tb_ripple.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/emaan/model_sim_exercises/tb_ripple.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity tb_ripple
+-- Compiling architecture behavior of tb_ripple
+
+} {} {}} {C:/Users/emaan/Desktop/hardware engineerin/lab1/4bitadder_subtractor.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/emaan/Desktop/hardware engineerin/lab1/4bitadder_subtractor.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity addsub
+-- Compiling architecture Behavioral of addsub
+
+} {} {}} {C:/Users/emaan/Desktop/hardware engineerin/lab1/halfadder.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/emaan/Desktop/hardware engineerin/lab1/halfadder.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity halfadder
+-- Compiling architecture behavioral of halfadder
+
+} {} {}} {C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1.vhd} {1 {vcom -work work -2002 -explicit -stats=none {C:/Users/emaan/Desktop/hardware engineerin/lab1/lab1.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Compiling entity FullAdderexample
+-- Compiling architecture behavior of FullAdderexample
+
+} {} {}}

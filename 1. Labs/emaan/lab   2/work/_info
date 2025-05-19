@@ -1,0 +1,89 @@
+m255
+K4
+z2
+!s11e vcom 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Ebcd7segment
+Z0 w1747072228
+!i122 0
+Z1 dC:/Users/emaan/Desktop/hardware engineerin/lab   2
+Z2 8C:/Users/emaan/Desktop/hardware engineerin/lab   2/BCD7segmentdecoder.vhd
+Z3 FC:/Users/emaan/Desktop/hardware engineerin/lab   2/BCD7segmentdecoder.vhd
+l0
+L4 1
+V`VG37GcBU5>K4<N6Ej9Ia1
+!s100 81TEU@WAYBif7<eU_h4zJ1
+Z4 OV;C;2020.1;71
+32
+Z5 !s110 1747072233
+!i10b 1
+Z6 !s108 1747072232.000000
+Z7 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab   2/BCD7segmentdecoder.vhd|
+Z8 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab   2/BCD7segmentdecoder.vhd|
+!i113 1
+Z9 o-work work -2002 -explicit
+Z10 tExplicit 1 CvgOpt 0
+Abehavioral
+DEx4 work 11 bcd7segment 0 22 `VG37GcBU5>K4<N6Ej9Ia1
+!i122 0
+l12
+L11 39
+VP<T^C9Cd=C:J?3B0D;2841
+!s100 @^Tfai>Q1zb4]be>ROkj23
+R4
+32
+R5
+!i10b 1
+R6
+R7
+R8
+!i113 1
+R9
+R10
+Etb_bcd7segment
+Z11 w1747072788
+Z12 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z13 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 1
+R1
+Z14 8C:/Users/emaan/Desktop/hardware engineerin/lab   2/tb_BCD7segmentdecoder.vhd
+Z15 FC:/Users/emaan/Desktop/hardware engineerin/lab   2/tb_BCD7segmentdecoder.vhd
+l0
+L4 1
+V8lhhJn:e<NY^<1Xa8^e9l2
+!s100 :m@emA:0BmE51io0hUkgm0
+R4
+32
+Z16 !s110 1747072791
+!i10b 1
+Z17 !s108 1747072791.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/emaan/Desktop/hardware engineerin/lab   2/tb_BCD7segmentdecoder.vhd|
+!s107 C:/Users/emaan/Desktop/hardware engineerin/lab   2/tb_BCD7segmentdecoder.vhd|
+!i113 1
+R9
+R10
+Abehavior
+R12
+R13
+DEx4 work 14 tb_bcd7segment 0 22 8lhhJn:e<NY^<1Xa8^e9l2
+!i122 1
+l12
+L7 53
+VA13`;:?dz0oKHZRXb;C^12
+!s100 MLC6M=M=]0fd<K6?LR9no3
+R4
+32
+R16
+!i10b 1
+R17
+R18
+Z19 !s107 C:/Users/emaan/Desktop/hardware engineerin/lab   2/tb_BCD7segmentdecoder.vhd|
+!i113 1
+R9
+R10

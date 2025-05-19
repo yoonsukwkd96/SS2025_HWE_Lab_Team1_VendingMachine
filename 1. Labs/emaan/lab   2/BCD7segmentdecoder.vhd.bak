@@ -1,0 +1,27 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity BCD7segment is
+port(
+	b0,b1,b2,b3:in bit;
+	a,b,c,d,e,f,g: out bit);
+architecture behavioral of BCD7segment is
+signal BCD : integer range 0 to 15;
+begin
+BCD <= 1*bit'pos(b0)+2*bit'pos(b1)+4*bit'pos(b2)+8*bit'pos(b3);
+process(BCD)
+begin 
+case BCD is 
+when		 0  => (a,b,c,d,e,f,g) <= ('1','1','1','1','1','1','0');
+            when 1  => (a,b,c,d,e,f,g) <= ('0','1','1','0','0','0','0');
+            when 2  => (a,b,c,d,e,f,g) <= ('1','1','0','1','1','0','1');
+            when 3  => (a,b,c,d,e,f,g) <= ('1','1','1','1','0','0','1');
+            when 4  => (a,b,c,d,e,f,g) <= ('0','1','1','0','0','1','1');
+            when 5  => (a,b,c,d,e,f,g) <= ('1','0','1','1','0','1','1');
+            when 6  => (a,b,c,d,e,f,g) <= ('1','0','1','1','1','1','1');
+            when 7  => (a,b,c,d,e,f,g) <= ('1','1','1','0','0','0','0');
+            when 8  => (a,b,c,d,e,f,g) <= ('1','1','1','1','1','1','1');
+            when 9  => (a,b,c,d,e,f,g) <= ('1','1','1','1','0','1','1');
+end case;
+end process;
+end behavioral;
