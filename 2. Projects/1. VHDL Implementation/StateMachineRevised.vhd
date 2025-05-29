@@ -1,0 +1,137 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity VendingMachine is
+  Port (
+    clk       : in  std_logic;
+    rst       : in  std_logic;
+    buttons   : in  std_logic_vector(4 downto 0);   
+    product_select : in  std_logic_vector(2 downto 0); 
+    seven_seg : out std_logic_vector(6 downto 0);   
+    anode     : out std_logic_vector(3 downto 0);   
+    state_leds: out std_logic_vector(3 downto 0)    
+  );
+end VendingMachine;
+
+architecture Behavioral of VendingMachine is
+
+  type state_type is (IDLE, DISPLAY, SELECTED, COIN_INSERT, DISPENSE, REFUND);
+  signal current_state, next_state : state_type;
+
+
+  constant PRICE_0 : integer := 100; 
+  constant PRICE_1 : integer := 120; 
+  constant PRICE_2 : integer := 150;  
+
+  signal balance : integer := 0;
+  signal selected_product : integer := 0;
+  signal product_price : integer := 0;
+  signal button_debounced : std_logic_vector(4 downto 0); 
+
+  signal display_value : integer := 0;
+  signal display_state : std_logic_vector(15 downto 0);
+
+begin
+
+
+  button_debounced <= buttons; 
+
+
+  -- FSM Sequential Process
+  process(clk, rst)
+  begin
+    if rst = '1' then
+      current_state <= IDLE;
+    elsif rising_edge(clk) then
+      current_state <= next_state;
+    end if;
+  end process;
+
+  ---------------------------------------
+  -- FSM Combinational Process
+  process(current_state, button_debounced, product_select, balance)
+  begin
+    -- Default assignments
+    next_state <= current_state;
+
+    case current_state is
+
+      when IDLE =>
+        balance <= 0; -- Reset balance
+        if button_debounced(4) = '1' then  -- Confirm button pressed
+          next_state <= DISPLAY;
+        end if;
+
+      when DISPLAY =>
+        -- Show product IDs on display
+        if button_debounced(4) = '1' then  -- Confirm to select
+          next_state <= SELECTED;
+        end if;
+
+      when SELECTED =>
+        -- Read selected product from switches
+        selected_product <= to_integer(unsigned(product_select));
+        case selected_product is
+          when 0 => product_price <= PRICE_0;
+          when 1 => product_price <= PRICE_1;
+          when 2 => product_price <= PRICE_2;
+          when others => product_price <= 0;
+        end case;
+        if button_debounced(4) = '1' then  -- Confirm product selection
+          next_state <= COIN_INSERT;
+        end if;
+
+      when COIN_INSERT =>
+        -- Handle coins: 10c, 20c, 50c, 1 EUR
+        if button_debounced(0) = '1' then
+          balance <= balance + 10;
+        elsif button_debounced(1) = '1' then
+          balance <= balance + 20;
+        elsif button_debounced(2) = '1' then
+          balance <= balance + 50;
+        elsif button_debounced(3) = '1' then
+          balance <= balance + 100;
+        end if;
+
+        -- Check if balance is enough
+        if balance >= product_price then
+          if balance > product_price then
+            next_state <= REFUND;
+          else
+            next_state <= DISPENSE;
+          end if;
+        end if;
+
+      when DISPENSE =>
+        -- Display "Done" (handled in 7-segment logic)
+        next_state <= IDLE;
+
+      when REFUND =>
+        -- Display "Refund" and deduct excess
+        next_state <= DISPENSE;
+
+      when others =>
+        next_state <= IDLE;
+
+    end case;
+  end process;
+
+  ---------------------------------------
+  -- State Indicator LEDs (Optional)
+  state_leds <=
+    "0001" when current_state = IDLE else
+    "0010" when current_state = DISPLAY else
+    "0011" when current_state = SELECTED else
+    "0100" when current_state = COIN_INSERT else
+    "0101" when current_state = DISPENSE else
+    "0110"; -- REFUND
+
+  ---------------------------------------
+  -- 7-Segment Display Process (Skeleton)
+  -- You will expand this to display product, price, balance, messages
+  -- For now, a simple placeholder
+  seven_seg <= "1111110"; -- Display '0' example (replace with decoder logic)
+  anode <= "1110";        -- Select which digit to display
+
+end Behavioral;
