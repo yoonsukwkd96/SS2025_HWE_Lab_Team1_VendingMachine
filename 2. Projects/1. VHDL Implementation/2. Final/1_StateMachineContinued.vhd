@@ -1,0 +1,132 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity VendingMachine is
+    Port (
+        clk       : in  STD_LOGIC;
+        reset     : in  STD_LOGIC;
+        BTNC      : in  STD_LOGIC; -- Confirmation / State Transition
+        BTNU      : in  STD_LOGIC; -- 10 cents
+        BTNL      : in  STD_LOGIC; -- 20 cents
+        BTNR      : in  STD_LOGIC; -- 50 cents
+        BTND      : in  STD_LOGIC; -- 1 euro / 100 cents
+        SW        : in  STD_LOGIC_VECTOR(2 downto 0); -- Item select SW0-SW2
+        LED       : out STD_LOGIC_VECTOR(2 downto 0); -- LED indicators per state
+        SEG       : out STD_LOGIC_VECTOR(6 downto 0);
+        AN        : out STD_LOGIC_VECTOR(7 downto 0)
+    );
+end VendingMachine;
+
+architecture Behavioral of VendingMachine is
+
+type state_type is (IDLE, DISPLAY, INSERT, DISPENSE);
+signal state, next_state : state_type;
+
+signal item_index : integer range 0 to 2 := 0;
+constant item_names : std_logic_vector(2 downto 0) := "000"; -- Placeholders
+type int_array is array (0 to 2) of integer;
+constant item_prices : int_array := (130, 150, 90);
+
+
+signal price        : integer := 0;
+signal inserted     : integer := 0;
+signal balance      : integer := 0;
+signal timer        : integer := 0;
+signal clk_1Hz      : STD_LOGIC := '0';
+
+-- Clock divider for 1Hz display cycling
+signal clk_div : integer := 0;
+constant CLK_DIV_MAX : integer := 100_000_000; -- Assuming 100 MHz clk
+
+begin
+
+process(clk, reset)
+begin
+    if reset = '1' then
+        clk_div <= 0;
+        clk_1Hz <= '0';
+    elsif rising_edge(clk) then
+        if clk_div = CLK_DIV_MAX/2 then
+            clk_1Hz <= not clk_1Hz;
+            clk_div <= 0;
+        else
+            clk_div <= clk_div + 1;
+        end if;
+    end if;
+end process;
+
+-- FSM State Transition Logic
+process(clk, reset)
+begin
+    if reset = '1' then
+        state <= IDLE;
+    elsif rising_edge(clk) then
+        state <= next_state;
+    end if;
+end process;
+
+-- FSM Next State Logic
+process(state, BTNC, SW, inserted, price)
+begin
+    case state is
+        when IDLE =>
+            if BTNC = '1' then
+                next_state <= DISPLAY;
+            else
+                next_state <= IDLE;
+            end if;
+
+        when DISPLAY =>
+            if BTNC = '1' and SW /= "000" then
+                case SW is
+                    when "001" => price <= item_prices(0);
+                    when "010" => price <= item_prices(1);
+                    when "100" => price <= item_prices(2);
+                    when others => price <= 0;
+                end case;
+                next_state <= INSERT;
+            else
+                next_state <= DISPLAY;
+            end if;
+
+        when INSERT =>
+            if BTNC = '1' and inserted >= price then
+                balance <= inserted - price;
+                next_state <= DISPENSE;
+            else
+                next_state <= INSERT;
+            end if;
+
+        when DISPENSE =>
+            next_state <= IDLE;
+    end case;
+end process;
+
+-- Coin Insertion Logic
+process(clk)
+begin
+    if rising_edge(clk) then
+        if state = INSERT then
+            if BTNU = '1' then inserted <= inserted + 10; end if;
+            if BTNL = '1' then inserted <= inserted + 20; end if;
+            if BTNR = '1' then inserted <= inserted + 50; end if;
+            if BTND = '1' then inserted <= inserted + 100; end if;
+        elsif state = IDLE then
+            inserted <= 0;
+        end if;
+    end if;
+end process;
+
+-- LED State Indicators
+LED(0) <= '1' when state = IDLE else '0';
+LED(1) <= '1' when state = DISPLAY else '0';
+LED(2) <= '1' when state = INSERT or state = DISPENSE else '0';
+
+-- 7-Segment Display (simplified placeholder)
+-- You?ll need to implement proper BCD to 7-segment display logic here
+SEG <= "0000001"; -- Placeholder (shows 0)
+AN <= "11111110"; -- Activate rightmost digit
+
+end Behavioral;

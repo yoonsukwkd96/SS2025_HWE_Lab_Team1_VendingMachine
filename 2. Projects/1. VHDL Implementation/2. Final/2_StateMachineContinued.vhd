@@ -1,0 +1,110 @@
+-- 7 segment display decoders implementation
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
+entity VendingMachine is
+    Port (
+        clk       : in  STD_LOGIC;
+        reset     : in  STD_LOGIC;
+        BTNC      : in  STD_LOGIC;
+        BTNU      : in  STD_LOGIC;
+        BTNL      : in  STD_LOGIC;
+        BTNR      : in  STD_LOGIC;
+        BTND      : in  STD_LOGIC;
+        SW        : in  STD_LOGIC_VECTOR(2 downto 0);
+        LED       : out STD_LOGIC_VECTOR(2 downto 0);
+        SEG       : out STD_LOGIC_VECTOR(6 downto 0);
+        AN        : out STD_LOGIC_VECTOR(7 downto 0);
+        dp        : out STD_LOGIC
+    );
+end VendingMachine;
+
+architecture Behavioral of VendingMachine is
+
+type state_type is (IDLE, DISPLAY, INSERT, DISPENSE);
+signal state, next_state : state_type;
+
+type int_array is array (0 to 2) of integer;
+constant item_prices : int_array := (130, 150, 90);
+
+signal price        : integer := 0;
+signal inserted     : integer := 0;
+signal balance      : integer := 0;
+signal timer        : integer := 0;
+signal clk_1Hz      : STD_LOGIC := '0';
+
+-- Clock divider for 1Hz display cycling
+signal clk_div : integer := 0;
+constant CLK_DIV_MAX : integer := 100_000_000;
+
+-- 7-segment control
+signal digit_value : STD_LOGIC_VECTOR(3 downto 0);
+signal digit_select : integer range 0 to 7 := 0;
+signal seg_data     : STD_LOGIC_VECTOR(6 downto 0);
+signal show_left  : std_logic_vector(15 downto 0);
+signal show_right : std_logic_vector(15 downto 0);
+
+begin
+
+-- Display update process (rotates through 8 digits)
+process(clk)
+begin
+    if rising_edge(clk) then
+        digit_select <= (digit_select + 1) mod 8;
+        case digit_select is
+            when 0 =>
+                digit_value <= show_left(3 downto 0);
+                AN <= "11111110";
+            when 1 =>
+                digit_value <= show_left(7 downto 4);
+                AN <= "11111101";
+            when 2 =>
+                digit_value <= show_left(11 downto 8);
+                AN <= "11111011";
+            when 3 =>
+                digit_value <= show_left(15 downto 12);
+                AN <= "11110111";
+            when 4 =>
+                digit_value <= show_right(3 downto 0);
+                AN <= "11101111";
+            when 5 =>
+                digit_value <= show_right(7 downto 4);
+                AN <= "11011111";
+            when 6 =>
+                digit_value <= show_right(11 downto 8);
+                AN <= "10111111";
+            when 7 =>
+                digit_value <= show_right(15 downto 12);
+                AN <= "01111111";
+            when others => null;
+        end case;
+
+        -- 7-segment decoding for digits 0?9
+        case digit_value is
+            when "0000" => seg_data <= "0000001"; -- 0
+            when "0001" => seg_data <= "1001111"; -- 1
+            when "0010" => seg_data <= "0010010"; -- 2
+            when "0011" => seg_data <= "0000110"; -- 3
+            when "0100" => seg_data <= "1001100"; -- 4
+            when "0101" => seg_data <= "0100100"; -- 5
+            when "0110" => seg_data <= "0100000"; -- 6
+            when "0111" => seg_data <= "0001111"; -- 7
+            when "1000" => seg_data <= "0000000"; -- 8
+            when "1001" => seg_data <= "0000100"; -- 9
+            when others => seg_data <= "1111111"; -- blank
+        end case;
+    end if;
+end process;
+
+SEG <= seg_data;
+dp <= '0';
+
+-- LED State Indicators
+LED(0) <= '1' when state = IDLE else '0';
+LED(1) <= '1' when state = DISPLAY else '0';
+LED(2) <= '1' when state = INSERT or state = DISPENSE else '0';
+
+end Behavioral;
+
