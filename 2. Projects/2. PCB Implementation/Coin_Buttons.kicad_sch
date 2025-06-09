@@ -1684,7 +1684,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b6890df-a97c-4e1f-9226-fdd9e6ffdbbe")
-		(property "Reference" "SW2"
+		(property "Reference" "SW6"
 			(at 97.79 50.8 0)
 			(effects
 				(font
@@ -1736,7 +1736,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1d7dd153-b5e8-4c52-99fd-a0009788e3fc"
-					(reference "SW2")
+					(reference "SW6")
 					(unit 1)
 				)
 			)
@@ -1752,7 +1752,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7d5131e5-7079-4977-9e28-6b785c498ef4")
-		(property "Reference" "SW6"
+		(property "Reference" "SW4"
 			(at 99.06 19.05 0)
 			(effects
 				(font
@@ -1804,7 +1804,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1d7dd153-b5e8-4c52-99fd-a0009788e3fc"
-					(reference "SW6")
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -1890,7 +1890,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8a7deef9-9a1e-43e2-b568-fc1ac2e2607c")
-		(property "Reference" "SW3"
+		(property "Reference" "SW7"
 			(at 95.25 74.93 0)
 			(effects
 				(font
@@ -1942,7 +1942,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1d7dd153-b5e8-4c52-99fd-a0009788e3fc"
-					(reference "SW3")
+					(reference "SW7")
 					(unit 1)
 				)
 			)
@@ -2294,7 +2294,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e2ef4298-8ee8-4fa8-bd5e-2ced3aa63ac7")
-		(property "Reference" "SW4"
+		(property "Reference" "SW8"
 			(at 95.25 104.14 0)
 			(effects
 				(font
@@ -2346,7 +2346,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1d7dd153-b5e8-4c52-99fd-a0009788e3fc"
-					(reference "SW4")
+					(reference "SW8")
 					(unit 1)
 				)
 			)

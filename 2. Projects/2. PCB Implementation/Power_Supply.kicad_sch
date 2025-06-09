@@ -2644,7 +2644,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b5470cb6-26d4-4e41-af7d-abe7b4621861")
-		(property "Reference" "SW1"
+		(property "Reference" "SW3"
 			(at 128.27 22.86 0)
 			(effects
 				(font
@@ -2696,7 +2696,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/f50e1eb7-6c81-44e5-a51c-715e81aa5e89"
-					(reference "SW1")
+					(reference "SW3")
 					(unit 1)
 				)
 			)
