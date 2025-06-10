@@ -1,0 +1,61 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.types_pkg.all;
+
+entity FSM_Controller is
+    Port (
+        clk        : in  std_logic;
+        reset      : in  std_logic;
+        BTNC       : in  std_logic;
+        SW         : in  std_logic_vector(2 downto 0);
+        inserted   : in  unsigned(7 downto 0);
+        price_reg  : in  unsigned(7 downto 0);
+        state      : out state_type
+    );
+end FSM_Controller;
+
+architecture Behavioral of FSM_Controller is
+    signal current_state, next_state : state_type := IDLE;
+begin
+
+    -- State register
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            current_state <= IDLE;
+        elsif rising_edge(clk) then
+            current_state <= next_state;
+        end if;
+    end process;
+
+    -- Next state logic
+    process(current_state, BTNC, SW, inserted, price_reg)
+    begin
+        next_state <= current_state;
+        case current_state is
+            when IDLE =>
+                if BTNC = '1' then
+                    next_state <= DISPLAY;
+                end if;
+
+            when DISPLAY =>
+                if BTNC = '1' and SW /= "000" then
+                    next_state <= INSERT;
+                end if;
+
+            when INSERT =>
+                if BTNC = '1' and inserted >= price_reg then
+                    next_state <= DISPENSE;
+                end if;
+
+            when DISPENSE =>
+                if BTNC = '1' then
+                    next_state <= IDLE;
+                end if;
+        end case;
+    end process;
+
+    state <= current_state;
+
+end Behavioral;

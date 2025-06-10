@@ -1,0 +1,46 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+use work.types_pkg.all;
+
+entity Coin_Handler is
+    Port (
+        clk       : in  std_logic;
+        reset     : in  std_logic;
+        state     : in  state_type;
+        BTNU      : in  std_logic;  -- +10
+        BTNL      : in  std_logic;  -- +20
+        BTNR      : in  std_logic;  -- +50
+        BTND      : in  std_logic;  -- +100
+        inserted  : out unsigned(7 downto 0)
+    );
+end Coin_Handler;
+
+architecture Behavioral of Coin_Handler is
+    signal inserted_reg : unsigned(7 downto 0) := (others => '0');
+    constant COIN_10  : unsigned(7 downto 0) := to_unsigned(10, 8);
+    constant COIN_20  : unsigned(7 downto 0) := to_unsigned(20, 8);
+    constant COIN_50  : unsigned(7 downto 0) := to_unsigned(50, 8);
+    constant COIN_100 : unsigned(7 downto 0) := to_unsigned(100, 8);
+begin
+
+    process(clk, reset)
+    begin
+        if reset = '1' then
+            inserted_reg <= (others => '0');
+        elsif rising_edge(clk) then
+            if state = INSERT then
+                if BTNU = '1' then inserted_reg <= inserted_reg + COIN_10; end if;
+                if BTNL = '1' then inserted_reg <= inserted_reg + COIN_20; end if;
+                if BTNR = '1' then inserted_reg <= inserted_reg + COIN_50; end if;
+                if BTND = '1' then inserted_reg <= inserted_reg + COIN_100; end if;
+            elsif state = IDLE then
+                inserted_reg <= (others => '0');
+            end if;
+        end if;
+    end process;
+
+    inserted <= inserted_reg;
+
+end Behavioral;
+
