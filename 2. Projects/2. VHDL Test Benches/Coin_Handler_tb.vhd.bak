@@ -15,7 +15,7 @@ architecture Behavioral of Coin_Handler_tb is
             BTNL            : in  std_logic;
             BTNR            : in  std_logic;
             BTND            : in  std_logic;
-            inserted_amount : out std_logic_vector(9 downto 0)
+            inserted_amount : out unsigned(9 downto 0)
         );
     end component;
 
@@ -25,7 +25,7 @@ architecture Behavioral of Coin_Handler_tb is
     signal BTNL_tb   : std_logic := '0';
     signal BTNR_tb   : std_logic := '0';
     signal BTND_tb   : std_logic := '0';
-    signal amount_tb : std_logic_vector(9 downto 0);
+    signal amount_tb : unsigned(9 downto 0);
 
     constant CLK_PERIOD : time := 10 ns;
 
@@ -54,10 +54,10 @@ begin
         end loop;
     end process;
 
-    -- Stimulus process
+    -- Stimulus and verification process
     stim_proc : process
     begin
-        -- Initial reset
+        -- Reset system
         reset_tb <= '1';
         wait for CLK_PERIOD * 2;
         reset_tb <= '0';
@@ -67,28 +67,37 @@ begin
         BTNU_tb <= '1';
         wait for CLK_PERIOD * 2;
         BTNU_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        wait for CLK_PERIOD * 2;
+        assert amount_tb = to_unsigned(10, 10)
+            report "TC1 Failed: Expected 10, got " & integer'image(to_integer(amount_tb)) severity error;
 
         -- TC2: Insert 20 cents (BTNL)
         BTNL_tb <= '1';
         wait for CLK_PERIOD * 2;
         BTNL_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        wait for CLK_PERIOD * 2;
+        assert amount_tb = to_unsigned(30, 10)
+            report "TC2 Failed: Expected 30, got " & integer'image(to_integer(amount_tb)) severity error;
 
         -- TC3: Insert 50 cents (BTNR)
         BTNR_tb <= '1';
         wait for CLK_PERIOD * 2;
         BTNR_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        wait for CLK_PERIOD * 2;
+        assert amount_tb = to_unsigned(80, 10)
+            report "TC3 Failed: Expected 80, got " & integer'image(to_integer(amount_tb)) severity error;
 
         -- TC4: Insert 100 cents (BTND)
         BTND_tb <= '1';
         wait for CLK_PERIOD * 2;
         BTND_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        wait for CLK_PERIOD * 2;
+        assert amount_tb = to_unsigned(180, 10)
+            report "TC4 Failed: Expected 180, got " & integer'image(to_integer(amount_tb)) severity error;
 
-        -- End simulation
-        assert false report "Coin_Handler test completed (TC1-TC4)." severity failure;
+        -- Done
+        report "All Coin_Handler test cases passed." severity note;
+        wait;
     end process;
 
 end Behavioral;

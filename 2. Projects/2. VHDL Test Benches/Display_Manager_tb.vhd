@@ -18,7 +18,6 @@ architecture Behavioral of Display_Manager_tb is
         );
     end component;
 
-    -- Signals
     signal clk_tb    : std_logic := '0';
     signal reset_tb  : std_logic := '0';
     signal text_tb   : std_logic_vector(63 downto 0);
@@ -28,13 +27,12 @@ architecture Behavioral of Display_Manager_tb is
 
     constant CLK_PERIOD : time := 10 ns;
 
-    -- Predefined ASCII messages (hex-encoded)
     constant MSG_COLA  : std_logic_vector(63 downto 0) := x"636F6C4130313330"; -- "colA0130"
     constant MSG_BEER  : std_logic_vector(63 downto 0) := x"6245457230313530"; -- "bEEr0150"
     constant MSG_H2O   : std_logic_vector(63 downto 0) := x"68324F2020303930"; -- "h2O 0090"
     constant MSG_BLANK : std_logic_vector(63 downto 0) := x"2020202020202020"; -- "        "
 
-    -- String to ASCII helper
+
     function to_ascii_vector(s: string) return std_logic_vector is
         variable result : std_logic_vector(63 downto 0) := (others => '0');
     begin
@@ -49,8 +47,6 @@ architecture Behavioral of Display_Manager_tb is
     end function;
 
 begin
-
-    -- DUT instantiation
     DUT : Display_Manager
         port map (
             clk          => clk_tb,
@@ -61,7 +57,6 @@ begin
             dp           => dp_tb
         );
 
-    -- Clock generator
     clk_process : process
     begin
         while true loop
@@ -72,16 +67,15 @@ begin
         end loop;
     end process;
 
-    -- Stimulus process with assertions
     stim_proc : process
         variable msg_AbE : std_logic_vector(63 downto 0);
     begin
-        -- Reset pulse
+        -- Initial Reset
         reset_tb <= '1';
         wait for CLK_PERIOD * 2;
         reset_tb <= '0';
 
-        -- TC1: "AbE123 0"
+        -- Test Case 1: "AbE123 0"
         msg_AbE := to_ascii_vector("AbE123 0");
         text_tb <= msg_AbE;
         wait for CLK_PERIOD * 2;
@@ -89,28 +83,28 @@ begin
             report "TC1 Failed: text_tb does not match 'AbE123 0'" severity error;
         wait for 3 ms;
 
-        -- TC2: "colA0130"
+        -- Test Case 2: "colA0130"
         text_tb <= MSG_COLA;
         wait for CLK_PERIOD * 2;
         assert text_tb = MSG_COLA
             report "TC2 Failed: text_tb does not match 'colA0130'" severity error;
         wait for 3 ms;
 
-        -- TC3: "bEEr0150"
+        -- Test Case 3: "bEEr0150"
         text_tb <= MSG_BEER;
         wait for CLK_PERIOD * 2;
         assert text_tb = MSG_BEER
             report "TC3 Failed: text_tb does not match 'bEEr0150'" severity error;
         wait for 3 ms;
 
-        -- TC4: "h2O 0090"
+        -- Test Case 4: "h2O 0090"
         text_tb <= MSG_H2O;
         wait for CLK_PERIOD * 2;
         assert text_tb = MSG_H2O
             report "TC4 Failed: text_tb does not match 'h2O 0090'" severity error;
         wait for 3 ms;
 
-        -- TC5: Blank
+        -- Test Case 5: Blank
         text_tb <= MSG_BLANK;
         wait for CLK_PERIOD * 2;
         assert text_tb = MSG_BLANK

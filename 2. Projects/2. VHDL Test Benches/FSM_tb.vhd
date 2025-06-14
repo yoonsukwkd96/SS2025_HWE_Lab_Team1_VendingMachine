@@ -63,59 +63,72 @@ begin
 
     stim_proc : process
     begin
-        -- TC1: State transition with edge cases
+        -- Initial Reset
         reset_tb <= '1'; wait for CLK_PERIOD * 2; reset_tb <= '0'; wait for CLK_PERIOD * 2;
 
-        -- IDLE -> DISPLAY
+        -- Test Case 1: IDLE -> DISPLAY
         BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
 
-        -- DISPLAY (invalid switch: SW = "000")
+        -- Test Case 2: DISPLAY (invalid switch: SW = "000")
         SW_tb <= "000"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
         assert LED_tb = "0010" report "Unexpected state transition on invalid switch" severity error;
 
-        -- DISPLAY -> INSERT (valid switch: SW = "001")
+        -- Test Case 3: DISPLAY -> INSERT (valid switch: SW = "001")
         SW_tb <= "001"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
         assert LED_tb = "0100" report "Failed to transition to INSERT" severity error;
 
-        -- INSERT (not enough money)
+        -- Test Case 4: INSERT (not enough money)
         inserted_amount_tb <= to_unsigned(50, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
         assert LED_tb = "0100" report "Should not transition with insufficient money" severity error;
 
-        -- INSERT -> DISPENSE
+        -- Test Case 5: INSERT -> DISPENSE
         inserted_amount_tb <= to_unsigned(130, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
         assert LED_tb = "1000" report "Failed to transition to DISPENSE" severity error;
 
-        -- DISPENSE (invalid: switch still ON)
+        -- Test Case 6: DISPENSE (invalid: switch still ON)
         SW_tb <= "001"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
         assert LED_tb = "1000" report "Should not transition when switch ON" severity error;
 
-        -- DISPENSE -> IDLE (switch OFF)
+        -- Test Case 7: DISPENSE -> IDLE (switch OFF)
         SW_tb <= "000"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
         assert LED_tb = "0001" report "Failed to transition to IDLE" severity error;
 
-        -- TC2: DISPLAY content verification
-        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; -- IDLE -> DISPLAY
+        -- DISPLAY content verification
+	-- Test Case 8: IDLE ? DISPLAY (BTNC pressed) 
+        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; 
+
+	--  Test Case 9: display item 1 verification
         SW_tb <= "001"; wait for CLK_PERIOD * 2;
         assert to_string(display_text_tb) = "colA0130" report "Wrong DISPLAY text for SW=001" severity error;
-        SW_tb <= "010"; wait for CLK_PERIOD * 2;
+        
+	--  Test Case 10: display item 2 verification
+	SW_tb <= "010"; wait for CLK_PERIOD * 2;
         assert to_string(display_text_tb) = "bEEr0150" report "Wrong DISPLAY text for SW=010" severity error;
-        SW_tb <= "100"; wait for CLK_PERIOD * 2;
+        
+	-- Test Case 11: display item 3 verification
+	SW_tb <= "100"; wait for CLK_PERIOD * 2;
         assert to_string(display_text_tb) = "h2O 0090" report "Wrong DISPLAY text for SW=100" severity error;
 
-        -- TC3: INSERT display text
-        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; -- DISPLAY -> INSERT
+	-- INSERT content verification
+        -- Test Case 12: DISPLAY ? INSERT (BTNC pressed), insert item 3 display verification and insert coin display verification
+        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; 
         inserted_amount_tb <= to_unsigned(50, 14); wait for CLK_PERIOD * 2;
-        assert to_string(display_text_tb)(1 to 4) = "0130" report "Price incorrect in INSERT" severity error;
+        assert to_string(display_text_tb)(1 to 4) = "0090" report "Price incorrect in INSERT" severity error;
         assert to_string(display_text_tb)(5 to 8) = "0050" report "Inserted incorrect in INSERT" severity error;
 
-        -- TC4: DISPENSE shows correct change
+        -- Test Case 13: In the state DISPENSE shows correct change, inserted coin is 150, change should be 60
         inserted_amount_tb <= to_unsigned(150, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+	assert LED_tb = "1000" report "State transition to DISPENSE was not successful" severity error;
         assert to_string(display_text_tb)(1 to 4) = "CHGE" report "Missing CHGE prefix" severity error;
-        assert to_string(display_text_tb)(5 to 8) = "0020" report "Wrong change value" severity error;
+        assert to_string(display_text_tb)(5 to 8) = "0060" report "Wrong change value" severity error;
 
-        -- TC5: Reset in every state brings back to IDLE
-        reset_tb <= '1'; wait for CLK_PERIOD * 2; reset_tb <= '0'; wait for CLK_PERIOD * 2;
-        assert LED_tb = "0001" report "Reset did not bring FSM back to IDLE" severity error;
+        -- Test Case 14: Attempt to finish the entire vending machine simulaion with BTNC pressed with switch still ON
+        BTNC_tb <= '1'; wait for CLK_PERIOD * 2; BTNC_tb <= '0'; wait for CLK_PERIOD * 2;
+        assert LED_tb /= "0001" report "FSM transitioned to IDLE despite switch being ON" severity error;
+
+        -- Test Case 15: Turn off switch and press BTNC to go to IDLE
+        SW_tb <= "000"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "0001" report "FSM did not transition to IDLE after switch off and BTNC" severity error;
 
         report "FSM_Controller full test completed successfully." severity note;
         wait;

@@ -17,16 +17,10 @@ architecture Behavioral of Display_Manager is
 
     signal refresh_counter : unsigned(15 downto 0) := (others => '0');
     signal digit_index     : integer range 0 to 7 := 0;
-
-    -- Character to display at the current digit
     signal current_char : std_logic_vector(7 downto 0);
-
-    -- Segment output before inverting (active-high internal)
     signal seg_temp : std_logic_vector(6 downto 0);
 
 begin
-
-    -- Clock divider for multiplexing (~3 kHz refresh rate)
     process(clk)
     begin
         if rising_edge(clk) then
@@ -38,7 +32,6 @@ begin
         end if;
     end process;
 
-    -- Digit index updates every ~2^13 cycles (~3 kHz at 100 MHz)
     process(clk)
     begin
         if rising_edge(clk) then
@@ -52,10 +45,8 @@ begin
         end if;
     end process;
 
-    -- Select current ASCII character based on digit index
     current_char <= display_text(63 - digit_index*8 downto 56 - digit_index*8);
 
-    -- ASCII to 7-segment decoder (simple cases only)
     process(current_char)
     begin
         case current_char is
@@ -79,20 +70,14 @@ begin
             when x"68" => seg_temp <= "1110000"; -- 'h'
             when x"6C" => seg_temp <= "1110001"; -- 'l'
             when x"6F" => seg_temp <= "0100001"; -- 'o'
-            when x"20" => seg_temp <= "1111111"; -- blank (space)
+            when x"20" => seg_temp <= "1111111"; -- blank space
 
-            when others => seg_temp <= "1111111"; -- default: blank
+            when others => seg_temp <= "1111111"; 
         end case;
     end process;
 
-    -- Segment output is active-low
     SEG <= not seg_temp;
-
-    -- Active-low digit enable
     AN <= not std_logic_vector(to_unsigned(2**digit_index, 8));
-
-
-    -- Decimal point active-low: show dot between digits 2-3 and 6-7
     dp <= '0' when (digit_index = 2 or digit_index = 6) else '1';
 
 end Behavioral;

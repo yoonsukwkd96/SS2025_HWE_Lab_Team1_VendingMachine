@@ -8,7 +8,7 @@ entity FSM_Controller is
         reset          : in  std_logic;
         BTNC           : in  std_logic;
         SW             : in  std_logic_vector(2 downto 0);
-        inserted_amount: in  unsigned(13 downto 0); -- max 9999 (99.99?)
+        inserted_amount: in  unsigned(13 downto 0); 
         LED            : out std_logic_vector(3 downto 0);
         display_text   : out std_logic_vector(63 downto 0)
     );
@@ -16,7 +16,6 @@ end FSM_Controller;
 
 architecture Behavioral of FSM_Controller is
 
-    -- Convert string (8 chars) to std_logic_vector
     function string_to_ascii(s : string) return std_logic_vector is
         variable result : std_logic_vector(63 downto 0) := (others => '0');
     begin
@@ -30,7 +29,6 @@ architecture Behavioral of FSM_Controller is
         return result;
     end function;
 
-    -- Convert 14-bit unsigned cents value to 4-digit ASCII string
     function format_price_to_string(value : unsigned(13 downto 0)) return string is
         variable str     : string(1 to 4);
         variable int_val : integer := to_integer(value);
@@ -44,20 +42,15 @@ architecture Behavioral of FSM_Controller is
 
     type state_type is (IDLE, DISPLAY, INSERT, DISPENSE);
     signal current_state, next_state : state_type;
-
     signal BTNC_prev : std_logic := '0';
     signal BTNC_edge : std_logic;
-
     signal display_text_internal : std_logic_vector(63 downto 0);
     signal selected_price : unsigned(13 downto 0) := (others => '0');
     signal change_amount   : unsigned(13 downto 0) := (others => '0');
 
 begin
-
-    -- Output assignment
     display_text <= display_text_internal;
 
-    -- Detect rising edge of BTNC
     process(clk)
     begin
         if rising_edge(clk) then
@@ -67,7 +60,6 @@ begin
 
     BTNC_edge <= '1' when (BTNC = '1' and BTNC_prev = '0') else '0';
 
-    -- State register
     process(clk, reset)
     begin
         if reset = '1' then
@@ -77,7 +69,6 @@ begin
         end if;
     end process;
 
-    -- FSM transitions
     process(current_state, BTNC_edge, SW, inserted_amount, selected_price)
     begin
         case current_state is
@@ -103,7 +94,7 @@ begin
                 end if;
 
             when DISPENSE =>
-                if BTNC_edge = '1' then
+                if BTNC_edge = '1' and SW = "000" then
                     next_state <= IDLE;
                 else
                     next_state <= DISPENSE;
@@ -114,14 +105,12 @@ begin
         end case;
     end process;
 
-    -- LED output
     with current_state select
         LED <= "0001" when IDLE,
                "0010" when DISPLAY,
                "0100" when INSERT,
                "1000" when DISPENSE;
 
-    -- Display logic
     process(current_state, SW, inserted_amount, selected_price)
         variable price_str     : string(1 to 4);
         variable inserted_str  : string(1 to 4);

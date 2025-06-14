@@ -72,36 +72,52 @@ begin
         end loop;
     end process;
 
-    -- Stimulus process
+    -- Stimulus process with assertions
     stim_proc : process
+        variable msg_AbE : std_logic_vector(63 downto 0);
     begin
         -- Reset pulse
         reset_tb <= '1';
         wait for CLK_PERIOD * 2;
         reset_tb <= '0';
 
-        -- TC1: Custom test pattern (ASCII diversity)
-        text_tb <= to_ascii_vector("AbE123 0");
-        wait for 3 ms;  -- Enough for full digit cycle
+        -- TC1: "AbE123 0"
+        msg_AbE := to_ascii_vector("AbE123 0");
+        text_tb <= msg_AbE;
+        wait for CLK_PERIOD * 2;
+        assert text_tb = msg_AbE
+            report "TC1 Failed: text_tb does not match 'AbE123 0'" severity error;
+        wait for 3 ms;
 
-        -- TC2: Display "colA0130"
+        -- TC2: "colA0130"
         text_tb <= MSG_COLA;
+        wait for CLK_PERIOD * 2;
+        assert text_tb = MSG_COLA
+            report "TC2 Failed: text_tb does not match 'colA0130'" severity error;
         wait for 3 ms;
 
-        -- TC3: Display "bEEr0150"
+        -- TC3: "bEEr0150"
         text_tb <= MSG_BEER;
+        wait for CLK_PERIOD * 2;
+        assert text_tb = MSG_BEER
+            report "TC3 Failed: text_tb does not match 'bEEr0150'" severity error;
         wait for 3 ms;
 
-        -- TC4: Display "h2O 0090"
+        -- TC4: "h2O 0090"
         text_tb <= MSG_H2O;
+        wait for CLK_PERIOD * 2;
+        assert text_tb = MSG_H2O
+            report "TC4 Failed: text_tb does not match 'h2O 0090'" severity error;
         wait for 3 ms;
 
-        -- TC5: Display all blanks
+        -- TC5: Blank
         text_tb <= MSG_BLANK;
+        wait for CLK_PERIOD * 2;
+        assert text_tb = MSG_BLANK
+            report "TC5 Failed: text_tb does not match blank message" severity error;
         wait for 3 ms;
 
-        -- End simulation
-        report "Display_Manager hybrid test completed." severity note;
+        report "Display_Manager hybrid test with text_tb assertions completed." severity note;
         wait;
     end process;
 

@@ -50,7 +50,6 @@ architecture Behavioral of FSM_Controller is
 
     signal display_text_internal : std_logic_vector(63 downto 0);
     signal selected_price : unsigned(13 downto 0) := (others => '0');
-    signal change_amount   : unsigned(13 downto 0) := (others => '0');
 
 begin
 
@@ -126,6 +125,8 @@ begin
         variable price_str     : string(1 to 4);
         variable inserted_str  : string(1 to 4);
         variable full_str      : string(1 to 8);
+        variable temp_change   : unsigned(13 downto 0);
+        variable chg_str       : string(1 to 4);
     begin
         case current_state is
 
@@ -167,16 +168,17 @@ begin
 
             when DISPENSE =>
                 if inserted_amount >= selected_price then
-                    change_amount <= inserted_amount - selected_price;
+                    temp_change := inserted_amount - selected_price;
                 else
-                    change_amount <= (others => '0');
+                    temp_change := (others => '0');
                 end if;
-                display_text_internal <= string_to_ascii("CHGE" &
-                    character'val((to_integer(change_amount / 1000) mod 10 + character'pos('0'))) &
-                    character'val((to_integer(change_amount / 100) mod 10 + character'pos('0'))) &
-                    character'val((to_integer(change_amount / 10) mod 10 + character'pos('0'))) &
-                    character'val((to_integer(change_amount) mod 10 + character'pos('0')))
-                );
+
+                chg_str(1) := character'val(to_integer(temp_change / 1000 mod 10) + character'pos('0'));
+                chg_str(2) := character'val(to_integer(temp_change / 100 mod 10) + character'pos('0'));
+                chg_str(3) := character'val(to_integer(temp_change / 10 mod 10) + character'pos('0'));
+                chg_str(4) := character'val(to_integer(temp_change mod 10) + character'pos('0'));
+
+                display_text_internal <= string_to_ascii("CHGE" & chg_str);
 
             when others =>
                 display_text_internal <= string_to_ascii("        ");

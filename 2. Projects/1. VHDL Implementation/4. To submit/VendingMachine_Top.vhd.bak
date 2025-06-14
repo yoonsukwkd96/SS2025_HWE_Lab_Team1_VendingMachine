@@ -22,8 +22,8 @@ end VendingMachine_Top;
 architecture Behavioral of VendingMachine_Top is
 
     -- Shared signals
-    signal display_text_sig : std_logic_vector(63 downto 0);
-    signal inserted_amount_sig : unsigned(13 downto 0);
+    signal display_text_sig     : std_logic_vector(63 downto 0);
+    signal inserted_amount_sig  : unsigned(13 downto 0);  -- Fixed: match FSM_Controller port
 
 begin
 
@@ -48,7 +48,7 @@ begin
             BTNL            => BTNL,
             BTNR            => BTNR,
             BTND            => BTND,
-            inserted_amount => inserted_amount_sig
+            inserted_amount => inserted_amount_sig(9 downto 0)  -- OK to slice: Coin_Handler only drives 10 bits
         );
 
     -- Display Manager
