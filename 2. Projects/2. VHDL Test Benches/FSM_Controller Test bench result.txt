@@ -1,0 +1,59 @@
+TC1: State Transition with Edge Cases
+
+Apply reset:
+reset_tb <= '1'; wait for 2 cycles; reset_tb <= '0'; wait for 2 cycles;
+
+IDLE → DISPLAY (BTNC pressed):
+BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+DISPLAY (invalid SW = "000", no transition):
+SW_tb <= "000"; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+DISPLAY → INSERT (valid SW = "001"):
+SW_tb <= "001"; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+INSERT (not enough money, inserted = 50, no transition):
+inserted_amount_tb <= 50; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+INSERT → DISPENSE (inserted = 130 meets selected_price = 130):
+inserted_amount_tb <= 130; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+DISPENSE (switch still ON, no transition):
+SW_tb <= "001"; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+DISPENSE → IDLE (switch OFF):
+SW_tb <= "000"; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+TC2: DISPLAY Message Verification
+
+IDLE → DISPLAY (BTNC pressed):
+BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+SW = "001", expect colA0130:
+SW_tb <= "001"; wait 2 cycles;
+
+SW = "010", expect bEEr0150:
+SW_tb <= "010"; wait 2 cycles;
+
+SW = "100", expect h2O 0090:
+SW_tb <= "100"; wait 2 cycles;
+
+TC3: INSERT Display (Price + Inserted)
+
+DISPLAY → INSERT (BTNC pressed):
+BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+inserted_amount_tb <= 50, expect "01300050" as display text
+inserted_amount_tb <= 50; wait 2 cycles;
+
+TC4: DISPENSE Shows Correct Change
+
+inserted_amount_tb <= 150; BTNC to trigger DISPENSE
+inserted_amount_tb <= 150; BTNC_tb <= '1'; wait 1 cycle; BTNC_tb <= '0'; wait 5 cycles;
+
+Expect display text: "CHGE0020"
+
+TC5: Reset Brings FSM Back to IDLE
+
+Apply reset:
+reset_tb <= '1'; wait 2 cycles; reset_tb <= '0'; wait 2 cycles;

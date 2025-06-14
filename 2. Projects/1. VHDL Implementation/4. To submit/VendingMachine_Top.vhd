@@ -1,0 +1,66 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity VendingMachine_Top is
+    Port (
+        clk    : in  std_logic;
+        reset  : in  std_logic;
+        BTNC   : in  std_logic;
+        BTNU   : in  std_logic;
+        BTNL   : in  std_logic;
+        BTNR   : in  std_logic;
+        BTND   : in  std_logic;
+        SW     : in  std_logic_vector(2 downto 0);
+        LED    : out std_logic_vector(3 downto 0);
+        SEG    : out std_logic_vector(6 downto 0);
+        AN     : out std_logic_vector(7 downto 0);
+        dp     : out std_logic
+    );
+end VendingMachine_Top;
+
+architecture Behavioral of VendingMachine_Top is
+
+    -- Shared signals
+    signal display_text_sig     : std_logic_vector(63 downto 0);
+    signal inserted_amount_sig  : unsigned(13 downto 0);  -- Fixed: match FSM_Controller port
+
+begin
+
+    -- FSM Controller
+    fsm_inst : entity work.FSM_Controller
+        port map (
+            clk             => clk,
+            reset           => reset,
+            BTNC            => BTNC,
+            SW              => SW,
+            inserted_amount => inserted_amount_sig,
+            LED             => LED,
+            display_text    => display_text_sig
+        );
+
+    -- Coin Handler
+    coin_inst : entity work.Coin_Handler
+        port map (
+            clk             => clk,
+            reset           => reset,
+            BTNU            => BTNU,
+            BTNL            => BTNL,
+            BTNR            => BTNR,
+            BTND            => BTND,
+            inserted_amount => inserted_amount_sig(9 downto 0)  -- OK to slice: Coin_Handler only drives 10 bits
+        );
+
+    -- Display Manager
+    disp_inst : entity work.Display_Manager
+        port map (
+            clk          => clk,
+            reset        => reset,
+            display_text => display_text_sig,
+            SEG          => SEG,
+            AN           => AN,
+            dp           => dp
+        );
+
+end Behavioral;
+

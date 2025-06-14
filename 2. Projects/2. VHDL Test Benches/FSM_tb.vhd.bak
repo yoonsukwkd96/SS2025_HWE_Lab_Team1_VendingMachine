@@ -1,0 +1,118 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity FSM_Controller_tb is
+end FSM_Controller_tb;
+
+architecture Behavioral of FSM_Controller_tb is
+
+    component FSM_Controller
+        Port (
+            clk             : in  std_logic;
+            reset           : in  std_logic;
+            BTNC            : in  std_logic;
+            SW              : in  std_logic_vector(2 downto 0);
+            inserted_amount : in  std_logic_vector(9 downto 0);
+            LED             : out std_logic_vector(3 downto 0);
+            display_text    : out std_logic_vector(63 downto 0)
+        );
+    end component;
+
+    signal clk_tb             : std_logic := '0';
+    signal reset_tb           : std_logic := '0';
+    signal BTNC_tb            : std_logic := '0';
+    signal SW_tb              : std_logic_vector(2 downto 0) := (others => '0');
+    signal inserted_amount_tb : std_logic_vector(9 downto 0) := (others => '0');
+    signal LED_tb             : std_logic_vector(3 downto 0);
+    signal display_text_tb    : std_logic_vector(63 downto 0);
+
+    constant CLK_PERIOD : time := 10 ns;
+
+    -- Price Constants
+    constant PRICE_COLA  : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(130, 10));
+    constant PRICE_BEER  : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(150, 10));
+    constant PRICE_H2O   : std_logic_vector(9 downto 0) := std_logic_vector(to_unsigned(90, 10));
+
+begin
+
+    -- Instantiate FSM
+    DUT: FSM_Controller
+        port map (
+            clk             => clk_tb,
+            reset           => reset_tb,
+            BTNC            => BTNC_tb,
+            SW              => SW_tb,
+            inserted_amount => inserted_amount_tb,
+            LED             => LED_tb,
+            display_text    => display_text_tb
+        );
+
+    -- Clock generation
+    clk_process : process
+    begin
+        while true loop
+            clk_tb <= '0'; wait for CLK_PERIOD / 2;
+            clk_tb <= '1'; wait for CLK_PERIOD / 2;
+        end loop;
+    end process;
+
+    -- Stimulus process
+    stim_proc: process
+        procedure press_BTNC is
+        begin
+            BTNC_tb <= '1'; wait for CLK_PERIOD;
+            BTNC_tb <= '0'; wait for CLK_PERIOD * 2;
+        end procedure;
+    begin
+        -- Reset
+        reset_tb <= '1'; wait for CLK_PERIOD * 2;
+        reset_tb <= '0'; wait for CLK_PERIOD * 2;
+
+        -------------------------------------------------
+        -- === Test 1: colA (130 cents) ===
+        -------------------------------------------------
+        -- IDLE ? DISPLAY
+        press_BTNC;
+
+        -- Set switch to SW0 (colA)
+        SW_tb <= "001"; wait for CLK_PERIOD;
+
+        -- DISPLAY ? INSERT
+        press_BTNC;
+
+        -- Set inserted amount = 130
+        inserted_amount_tb <= PRICE_COLA; wait for CLK_PERIOD;
+
+        -- INSERT ? DISPENSE
+        press_BTNC;
+
+        -- DISPENSE ? IDLE
+        press_BTNC;
+
+        -------------------------------------------------
+        -- === Test 2: bEEr (150 cents) ===
+        -------------------------------------------------
+        press_BTNC;
+        SW_tb <= "010"; wait for CLK_PERIOD;
+        press_BTNC;
+        inserted_amount_tb <= PRICE_BEER; wait for CLK_PERIOD;
+        press_BTNC;
+        press_BTNC;
+
+        -------------------------------------------------
+        -- === Test 3: h2O (90 cents) ===
+        -------------------------------------------------
+        press_BTNC;
+        SW_tb <= "100"; wait for CLK_PERIOD;
+        press_BTNC;
+        inserted_amount_tb <= PRICE_H2O; wait for CLK_PERIOD;
+        press_BTNC;
+        press_BTNC;
+
+        -- End of Test
+        assert false report "FSM_Controller test finished successfully." severity failure;
+    end process;
+
+end Behavioral;
+

@@ -1,0 +1,125 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity FSM_Controller_tb is
+end FSM_Controller_tb;
+
+architecture Behavioral of FSM_Controller_tb is
+
+    component FSM_Controller is
+        Port (
+            clk             : in  std_logic;
+            reset           : in  std_logic;
+            BTNC            : in  std_logic;
+            SW              : in  std_logic_vector(2 downto 0);
+            inserted_amount : in  unsigned(13 downto 0);
+            LED             : out std_logic_vector(3 downto 0);
+            display_text    : out std_logic_vector(63 downto 0)
+        );
+    end component;
+
+    signal clk_tb             : std_logic := '0';
+    signal reset_tb           : std_logic := '0';
+    signal BTNC_tb            : std_logic := '0';
+    signal SW_tb              : std_logic_vector(2 downto 0) := (others => '0');
+    signal inserted_amount_tb : unsigned(13 downto 0) := (others => '0');
+    signal LED_tb             : std_logic_vector(3 downto 0);
+    signal display_text_tb    : std_logic_vector(63 downto 0);
+
+    constant CLK_PERIOD : time := 10 ns;
+
+    function to_string(vec : std_logic_vector) return string is
+        variable s : string(1 to vec'length/8);
+    begin
+        for i in 0 to s'length - 1 loop
+            s(i+1) := character'val(to_integer(unsigned(vec(63 - i*8 downto 56 - i*8))));
+        end loop;
+        return s;
+    end function;
+
+begin
+
+    DUT: FSM_Controller
+        port map (
+            clk             => clk_tb,
+            reset           => reset_tb,
+            BTNC            => BTNC_tb,
+            SW              => SW_tb,
+            inserted_amount => inserted_amount_tb,
+            LED             => LED_tb,
+            display_text    => display_text_tb
+        );
+
+    clk_process : process
+    begin
+        while true loop
+            clk_tb <= '0';
+            wait for CLK_PERIOD / 2;
+            clk_tb <= '1';
+            wait for CLK_PERIOD / 2;
+        end loop;
+    end process;
+
+    stim_proc : process
+    begin
+        -- TC1: State transition with edge cases
+        reset_tb <= '1'; wait for CLK_PERIOD * 2; reset_tb <= '0'; wait for CLK_PERIOD * 2;
+
+        -- IDLE -> DISPLAY
+        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+
+        -- DISPLAY (invalid switch: SW = "000")
+        SW_tb <= "000"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "0010" report "Unexpected state transition on invalid switch" severity error;
+
+        -- DISPLAY -> INSERT (valid switch: SW = "001")
+        SW_tb <= "001"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "0100" report "Failed to transition to INSERT" severity error;
+
+        -- INSERT (not enough money)
+        inserted_amount_tb <= to_unsigned(50, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "0100" report "Should not transition with insufficient money" severity error;
+
+        -- INSERT -> DISPENSE
+        inserted_amount_tb <= to_unsigned(130, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "1000" report "Failed to transition to DISPENSE" severity error;
+
+        -- DISPENSE (invalid: switch still ON)
+        SW_tb <= "001"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "1000" report "Should not transition when switch ON" severity error;
+
+        -- DISPENSE -> IDLE (switch OFF)
+        SW_tb <= "000"; BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert LED_tb = "0001" report "Failed to transition to IDLE" severity error;
+
+        -- TC2: DISPLAY content verification
+        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; -- IDLE -> DISPLAY
+        SW_tb <= "001"; wait for CLK_PERIOD * 2;
+        assert to_string(display_text_tb) = "colA0130" report "Wrong DISPLAY text for SW=001" severity error;
+        SW_tb <= "010"; wait for CLK_PERIOD * 2;
+        assert to_string(display_text_tb) = "bEEr0150" report "Wrong DISPLAY text for SW=010" severity error;
+        SW_tb <= "100"; wait for CLK_PERIOD * 2;
+        assert to_string(display_text_tb) = "h2O 0090" report "Wrong DISPLAY text for SW=100" severity error;
+
+        -- TC3: INSERT display text
+        BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; -- DISPLAY -> INSERT
+        inserted_amount_tb <= to_unsigned(50, 14); wait for CLK_PERIOD * 2;
+        assert to_string(display_text_tb)(1 to 4) = "0130" report "Price incorrect in INSERT" severity error;
+        assert to_string(display_text_tb)(5 to 8) = "0050" report "Inserted incorrect in INSERT" severity error;
+
+        -- TC4: DISPENSE shows correct change
+        inserted_amount_tb <= to_unsigned(150, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
+        assert to_string(display_text_tb)(1 to 4) = "CHGE" report "Missing CHGE prefix" severity error;
+        assert to_string(display_text_tb)(5 to 8) = "0020" report "Wrong change value" severity error;
+
+        -- TC5: Reset in every state brings back to IDLE
+        reset_tb <= '1'; wait for CLK_PERIOD * 2; reset_tb <= '0'; wait for CLK_PERIOD * 2;
+        assert LED_tb = "0001" report "Reset did not bring FSM back to IDLE" severity error;
+
+        report "FSM_Controller full test completed successfully." severity note;
+        wait;
+    end process;
+
+end Behavioral;
+
