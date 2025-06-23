@@ -59,24 +59,42 @@ begin
         reset_tb <= '0';
         wait for CLK_PERIOD * 2;
 
-        -- Test Case 1: Insert 10 cents
-        BTNU_tb <= '1'; wait for CLK_PERIOD * 2; BTNU_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        -- Test Case 1: Insert 10 cents / BTNU pressed
+        BTNU_tb <= '1'; wait for CLK_PERIOD * 2; BTNU_tb <= '0'; wait for CLK_PERIOD *2;
+	assert inserted_amount_tb = 10
+	    report "Test 1: the inserted amount is not 10 cents / BTNU failed"
+	    severity error;
 
-        -- Test Case 2: Insert 20 cents
-        BTNL_tb <= '1'; wait for CLK_PERIOD * 2; BTNL_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        -- Test Case 2: Insert 20 cents / BTNL pressed
+        BTNL_tb <= '1'; wait for CLK_PERIOD * 2; BTNL_tb <= '0'; wait for CLK_PERIOD *2;
+	assert inserted_amount_tb = 10 + 20
+	    report "Test 2: the inserted amount is not 30 cents / BTNL failed"
+	    severity error;
 
-        -- Test Case 3: Insert 50 cents
-        BTNR_tb <= '1'; wait for CLK_PERIOD * 2; BTNR_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        -- Test Case 3: Insert 50 cents / BTNR pressed
+        BTNR_tb <= '1'; wait for CLK_PERIOD * 2; BTNR_tb <= '0'; wait for CLK_PERIOD *2;
+	assert inserted_amount_tb = 10 + 20 + 50
+	    report "Test 3: the inserted amount is not 80 cents / BTNR failed"
+	    severity error;
 
-        -- Test Case 4: Insert 1 Euro (100 cents)
-        BTND_tb <= '1'; wait for CLK_PERIOD * 2; BTND_tb <= '0';
-        wait for CLK_PERIOD * 5;
+        -- Test Case 4: Insert 1 Euro (100 cents) / BTND pressed
+        BTND_tb <= '1'; wait for CLK_PERIOD * 2; BTND_tb <= '0'; wait for CLK_PERIOD *2;
+	assert inserted_amount_tb = 10 + 20 + 50 + 100
+	    report "Test 4: the inserted amount is not 180 cents / BTND failed"
+	    severity error;
+
+	 -- Test Case 5: Reset test
+        reset_tb <= '1';
+        wait for CLK_PERIOD * 2;
+        reset_tb <= '0';
+        wait for CLK_PERIOD * 2;
+        assert inserted_amount_tb = 0
+            report "Test 5: Reset failed"
+            severity error;
 
         -- End simulation
-        assert false report "Coin_Handler test finished." severity failure;
+        report "ALL TESTS PASSED / Coin_Handler component verified" severity note;
+	wait;
     end process;
 
 end Behavioral;

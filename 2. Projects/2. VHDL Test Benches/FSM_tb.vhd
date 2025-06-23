@@ -94,7 +94,7 @@ begin
         assert LED_tb = "0001" report "Failed to transition to IDLE" severity error;
 
         -- DISPLAY content verification
-	-- Test Case 8: IDLE ? DISPLAY (BTNC pressed) 
+	-- Test Case 8: IDLE to DISPLAY (BTNC pressed) 
         BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; 
 
 	--  Test Case 9: display item 1 verification
@@ -107,10 +107,10 @@ begin
         
 	-- Test Case 11: display item 3 verification
 	SW_tb <= "100"; wait for CLK_PERIOD * 2;
-        assert to_string(display_text_tb) = "h2O 0090" report "Wrong DISPLAY text for SW=100" severity error;
+        assert to_string(display_text_tb) = "h2o 0090" report "Wrong DISPLAY text for SW=100" severity error;
 
 	-- INSERT content verification
-        -- Test Case 12: DISPLAY ? INSERT (BTNC pressed), insert item 3 display verification and insert coin display verification
+        -- Test Case 12: DISPLAY to INSERT (BTNC pressed), insert item 3 display verification and insert coin display verification
         BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5; 
         inserted_amount_tb <= to_unsigned(50, 14); wait for CLK_PERIOD * 2;
         assert to_string(display_text_tb)(1 to 4) = "0090" report "Price incorrect in INSERT" severity error;
@@ -119,7 +119,7 @@ begin
         -- Test Case 13: In the state DISPENSE shows correct change, inserted coin is 150, change should be 60
         inserted_amount_tb <= to_unsigned(150, 14); BTNC_tb <= '1'; wait for CLK_PERIOD; BTNC_tb <= '0'; wait for CLK_PERIOD * 5;
 	assert LED_tb = "1000" report "State transition to DISPENSE was not successful" severity error;
-        assert to_string(display_text_tb)(1 to 4) = "CHGE" report "Missing CHGE prefix" severity error;
+        assert to_string(display_text_tb)(1 to 4) = "chgE" report "Missing chgE prefix" severity error;
         assert to_string(display_text_tb)(5 to 8) = "0060" report "Wrong change value" severity error;
 
         -- Test Case 14: Attempt to finish the entire vending machine simulaion with BTNC pressed with switch still ON

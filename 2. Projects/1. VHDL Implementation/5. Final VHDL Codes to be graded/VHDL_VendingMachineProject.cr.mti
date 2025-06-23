@@ -1,0 +1,103 @@
+C:/Users/zfw/VHDL_VendingMachineProject/VendingMachine_Top.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\zfw\VHDL_VendingMachineProject\VendingMachine_Top.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity VendingMachine_Top
+-- Compiling architecture Structural of VendingMachine_Top
+-- Loading entity FSM_Controller
+-- Loading entity Coin_Handler
+-- Loading entity Item_ROM
+-- Loading entity Display_Manager
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/Coin_Handler.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\zfw\VHDL_VendingMachineProject\Coin_Handler.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity Coin_Handler
+-- Compiling architecture Behavioral of Coin_Handler
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/Final.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/Final.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity VendingMachine_AllInOne
+-- Compiling architecture Behavioral of VendingMachine_AllInOne
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/types_pkg.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\zfw\VHDL_VendingMachineProject\types_pkg.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package types_pkg
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/Main_improved.vhd {2 {vcom -work work -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/Main_improved.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity VendingMachine
+-- Compiling architecture Behavioral of VendingMachine
+** Warning: C:/Users/zfw/VHDL_VendingMachineProject/Main_improved.vhd(144): (vcom-1272) Length of expected is 16; length of actual is 12.
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/TB_FSM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/TB_FSM.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity tb_FSM_Controller
+-- Compiling architecture Behavioral of tb_FSM_Controller
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/Item_ROM.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\zfw\VHDL_VendingMachineProject\Item_ROM.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity Item_ROM
+-- Compiling architecture Behavioral of Item_ROM
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/Display_Manager.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\zfw\VHDL_VendingMachineProject\Display_Manager.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity Display_Manager
+-- Compiling architecture Behavioral of Display_Manager
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/FSM_Controller.vhd {1 {vcom -work work -2002 -explicit -stats=none {C:\Users\zfw\VHDL_VendingMachineProject\FSM_Controller.vhd}
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package types_pkg
+-- Compiling entity FSM_Controller
+-- Compiling architecture Behavioral of FSM_Controller
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/Main.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/Main.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity VendingMachine
+-- Compiling architecture Behavioral of VendingMachine
+
+} {} {}}
