@@ -152,7 +152,7 @@ begin
                         display_text_internal <= string_to_ascii("colA0130");
                     when "010" =>
                         selected_price <= to_unsigned(150, 14);
-                        display_text_internal <= string_to_ascii("bEEr0150");
+                        display_text_internal <= string_to_ascii("bEER0150");
                     when "100" =>
                         selected_price <= to_unsigned(90, 14);
                         display_text_internal <= string_to_ascii("h2o 0090");
