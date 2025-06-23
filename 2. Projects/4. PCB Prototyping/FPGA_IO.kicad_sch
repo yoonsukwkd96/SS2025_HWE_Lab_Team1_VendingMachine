@@ -8832,6 +8832,18 @@
 		(uuid "0a435147-0221-4f55-a4c9-0b3cb03b49e8")
 	)
 	(junction
+		(at 308.61 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0baf1c9b-acef-4a61-a120-551eb5a94fee")
+	)
+	(junction
+		(at 313.69 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0db7325a-01dc-4af1-b71e-876aeea95c70")
+	)
+	(junction
 		(at 685.8 128.27)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8914,6 +8926,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3cf1c846-cbcc-439f-993a-09465d918c4f")
+	)
+	(junction
+		(at 316.23 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "409b34d6-1aa2-4629-b97a-e5ae454cf912")
 	)
 	(junction
 		(at 627.38 105.41)
@@ -9054,6 +9072,12 @@
 		(uuid "857898d9-6e39-46b1-a9ec-018e6860eadb")
 	)
 	(junction
+		(at 306.07 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "85b02290-8d6f-4319-968c-393ac212caa4")
+	)
+	(junction
 		(at 109.22 335.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -9106,6 +9130,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ad2598da-4003-4e20-8745-75db9e5076ec")
+	)
+	(junction
+		(at 311.15 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ad81ed24-2a1c-4311-8a2b-17aa643d6129")
 	)
 	(junction
 		(at 633.73 276.86)
@@ -10675,6 +10705,16 @@
 	)
 	(wire
 		(pts
+			(xy 311.15 55.88) (xy 313.69 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "39bd46ac-a513-48f0-8483-3e8b85d9f5c6")
+	)
+	(wire
+		(pts
 			(xy 687.07 212.09) (xy 689.61 212.09)
 		)
 		(stroke
@@ -10785,7 +10825,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 55.88) (xy 318.77 55.88)
+			(xy 306.07 55.88) (xy 308.61 55.88)
 		)
 		(stroke
 			(width 0)
@@ -11685,7 +11725,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 52.07) (xy 306.07 55.88)
+			(xy 306.07 49.53) (xy 306.07 55.88)
 		)
 		(stroke
 			(width 0)
@@ -13225,6 +13265,16 @@
 	)
 	(wire
 		(pts
+			(xy 316.23 55.88) (xy 318.77 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "caad1c7a-3ea9-48cf-822d-b6b1a4495ab0")
+	)
+	(wire
+		(pts
 			(xy 140.97 358.14) (xy 151.13 358.14)
 		)
 		(stroke
@@ -13335,7 +13385,7 @@
 	)
 	(wire
 		(pts
-			(xy 306.07 52.07) (xy 685.8 52.07)
+			(xy 306.07 49.53) (xy 685.8 49.53)
 		)
 		(stroke
 			(width 0)
@@ -13845,6 +13895,16 @@
 	)
 	(wire
 		(pts
+			(xy 308.61 55.88) (xy 311.15 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8f19a6e-c7f0-4d8c-875c-c0b09db79bda")
+	)
+	(wire
+		(pts
 			(xy 614.68 218.44) (xy 622.3 218.44)
 		)
 		(stroke
@@ -13865,7 +13925,7 @@
 	)
 	(wire
 		(pts
-			(xy 685.8 52.07) (xy 685.8 96.52)
+			(xy 685.8 49.53) (xy 685.8 96.52)
 		)
 		(stroke
 			(width 0)
@@ -14052,6 +14112,16 @@
 			(type default)
 		)
 		(uuid "f2623fee-4163-4f82-b27f-3dd7b119321e")
+	)
+	(wire
+		(pts
+			(xy 313.69 55.88) (xy 316.23 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f30071bb-5777-4ee5-aa98-331c6fcde7a4")
 	)
 	(wire
 		(pts
@@ -15107,7 +15177,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0008adda-d666-48da-84c1-19c25bfba70c")
-		(property "Reference" "R32"
+		(property "Reference" "R24"
 			(at 651.51 172.7199 0)
 			(effects
 				(font
@@ -15116,7 +15186,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 651.51 175.2599 0)
 			(effects
 				(font
@@ -15125,7 +15195,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 647.192 173.99 90)
 			(effects
 				(font
@@ -15161,7 +15231,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R32")
+					(reference "R24")
 					(unit 1)
 				)
 			)
@@ -15177,7 +15247,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "06758662-c17f-4fa0-ba40-9ed8bdeeb2cd")
-		(property "Reference" "R17"
+		(property "Reference" "R18"
 			(at 411.48 214.63 90)
 			(effects
 				(font
@@ -15193,7 +15263,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 411.48 222.758 90)
 			(effects
 				(font
@@ -15229,7 +15299,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R17")
+					(reference "R18")
 					(unit 1)
 				)
 			)
@@ -15244,7 +15314,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "081e12dc-ed10-467f-a942-71eec0bc009b")
-		(property "Reference" "#FLG011"
+		(property "Reference" "#FLG08"
 			(at 594.36 219.075 0)
 			(effects
 				(font
@@ -15294,7 +15364,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG011")
+					(reference "#FLG08")
 					(unit 1)
 				)
 			)
@@ -15310,7 +15380,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08b7effc-c16b-47a3-9eb9-951c2dc807ef")
-		(property "Reference" "R31"
+		(property "Reference" "R23"
 			(at 651.51 105.4099 0)
 			(effects
 				(font
@@ -15319,7 +15389,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 651.51 107.9499 0)
 			(effects
 				(font
@@ -15328,7 +15398,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 647.192 106.68 90)
 			(effects
 				(font
@@ -15364,7 +15434,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R31")
+					(reference "R23")
 					(unit 1)
 				)
 			)
@@ -15380,7 +15450,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "10a439a5-5756-470a-a893-6fbbce392e9e")
-		(property "Reference" "#FLG010"
+		(property "Reference" "#FLG09"
 			(at 598.17 89.535 0)
 			(effects
 				(font
@@ -15430,7 +15500,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG010")
+					(reference "#FLG09")
 					(unit 1)
 				)
 			)
@@ -15446,7 +15516,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1300ee60-cbe8-4d32-bcd7-379f4f363afa")
-		(property "Reference" "R33"
+		(property "Reference" "R19"
 			(at 624.84 212.0899 0)
 			(effects
 				(font
@@ -15455,7 +15525,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 624.84 214.6299 0)
 			(effects
 				(font
@@ -15464,7 +15534,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 620.522 213.36 90)
 			(effects
 				(font
@@ -15500,7 +15570,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R33")
+					(reference "R19")
 					(unit 1)
 				)
 			)
@@ -15516,7 +15586,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1913f8fe-9421-45a1-a8e1-ea8eee26ae3b")
-		(property "Reference" "#PWR016"
+		(property "Reference" "#PWR03"
 			(at 320.04 332.74 0)
 			(effects
 				(font
@@ -15566,7 +15636,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR016")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -15590,7 +15660,7 @@
 				)
 			)
 		)
-		(property "Value" "PWR_LED"
+		(property "Value" "LED"
 			(at 635.9525 213.36 0)
 			(effects
 				(font
@@ -15598,7 +15668,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D3.0mm"
+		(property "Footprint" "LED_SMD:LED-APA102-2020"
 			(at 637.54 217.17 0)
 			(effects
 				(font
@@ -15659,7 +15729,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2ea9502d-35e7-496c-8047-6bf88200a217")
-		(property "Reference" "R26"
+		(property "Reference" "R10"
 			(at 144.78 321.31 90)
 			(effects
 				(font
@@ -15667,7 +15737,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 144.78 323.85 90)
 			(effects
 				(font
@@ -15675,7 +15745,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 144.78 329.438 90)
 			(effects
 				(font
@@ -15711,7 +15781,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R26")
+					(reference "R10")
 					(unit 1)
 				)
 			)
@@ -16742,7 +16812,7 @@
 			(uuid "6dd3a068-7943-4954-be86-278201410063")
 		)
 		(instances
-			(project ""
+			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
 					(reference "U4")
 					(unit 1)
@@ -16759,7 +16829,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "32878a71-8be7-4657-905a-75f11c99817b")
-		(property "Reference" "#FLG03"
+		(property "Reference" "#FLG06"
 			(at 407.67 252.095 0)
 			(effects
 				(font
@@ -16809,7 +16879,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG03")
+					(reference "#FLG06")
 					(unit 1)
 				)
 			)
@@ -16825,7 +16895,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "32cfee38-5b8e-40cc-9484-62a0519caacf")
-		(property "Reference" "SW2"
+		(property "Reference" "SW3"
 			(at 613.41 168.91 0)
 			(effects
 				(font
@@ -16841,7 +16911,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
 			(at 613.41 171.45 0)
 			(effects
 				(font
@@ -16877,7 +16947,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "SW2")
+					(reference "SW3")
 					(unit 1)
 				)
 			)
@@ -16893,7 +16963,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "34ed8f68-434c-41b4-80f1-fee6a09e4d89")
-		(property "Reference" "#PWR023"
+		(property "Reference" "#PWR010"
 			(at 593.09 92.71 0)
 			(effects
 				(font
@@ -16943,7 +17013,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR023")
+					(reference "#PWR010")
 					(unit 1)
 				)
 			)
@@ -16959,7 +17029,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "382edf86-9230-45da-894a-5f1d936ad43a")
-		(property "Reference" "U6"
+		(property "Reference" "U5"
 			(at 604.52 214.63 0)
 			(effects
 				(font
@@ -17015,7 +17085,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "U6")
+					(reference "U5")
 					(unit 1)
 				)
 			)
@@ -17031,7 +17101,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3a8fb6a3-4318-40e5-956a-d3bbb3e8c682")
-		(property "Reference" "#PWR024"
+		(property "Reference" "#PWR011"
 			(at 593.09 106.68 0)
 			(effects
 				(font
@@ -17081,7 +17151,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR024")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -17097,7 +17167,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48c8322e-5671-43c6-b85d-6d07ae8f701e")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR02"
 			(at 238.76 392.43 0)
 			(effects
 				(font
@@ -17147,7 +17217,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR014")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
@@ -17163,7 +17233,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4adc3ea4-e538-44b3-bb6e-f4a64224eab3")
-		(property "Reference" "R21"
+		(property "Reference" "R5"
 			(at 110.998 341.376 90)
 			(effects
 				(font
@@ -17171,7 +17241,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 106.68 341.63 90)
 			(effects
 				(font
@@ -17179,7 +17249,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 106.68 337.312 90)
 			(effects
 				(font
@@ -17215,7 +17285,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R21")
+					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -17231,7 +17301,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4cd8dadb-8bd4-44ed-8310-67b36e42ea46")
-		(property "Reference" "SW11"
+		(property "Reference" "SW6"
 			(at 617.22 97.79 0)
 			(effects
 				(font
@@ -17247,7 +17317,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
 			(at 617.22 100.33 0)
 			(effects
 				(font
@@ -17283,7 +17353,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "SW11")
+					(reference "SW6")
 					(unit 1)
 				)
 			)
@@ -17298,7 +17368,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "52fd5631-4678-4424-9586-782e25e8ee30")
-		(property "Reference" "#FLG04"
+		(property "Reference" "#FLG07"
 			(at 407.67 255.905 0)
 			(effects
 				(font
@@ -17348,7 +17418,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG04")
+					(reference "#FLG07")
 					(unit 1)
 				)
 			)
@@ -17364,7 +17434,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "53d31322-977c-4d33-a837-74c7fdad2a2e")
-		(property "Reference" "SW1"
+		(property "Reference" "SW2"
 			(at 613.41 139.7 0)
 			(effects
 				(font
@@ -17380,7 +17450,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
 			(at 613.41 142.24 0)
 			(effects
 				(font
@@ -17416,7 +17486,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "SW1")
+					(reference "SW2")
 					(unit 1)
 				)
 			)
@@ -17432,7 +17502,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "57cc0ccf-fb9b-4c12-89f4-90afc4d5e192")
-		(property "Reference" "BaseResistor5"
+		(property "Reference" "R12"
 			(at 181.61 377.1899 0)
 			(effects
 				(font
@@ -17441,7 +17511,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1kR"
+		(property "Value" "R"
 			(at 181.61 379.7299 0)
 			(effects
 				(font
@@ -17450,7 +17520,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 177.292 378.46 90)
 			(effects
 				(font
@@ -17486,7 +17556,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "BaseResistor5")
+					(reference "R12")
 					(unit 1)
 				)
 			)
@@ -17502,7 +17572,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5960c5cf-7a7c-4d07-96bb-f8ee9ec05ca7")
-		(property "Reference" "R35"
+		(property "Reference" "R26"
 			(at 681.99 240.0299 0)
 			(effects
 				(font
@@ -17511,7 +17581,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "390R"
+		(property "Value" "R"
 			(at 681.99 242.5699 0)
 			(effects
 				(font
@@ -17520,7 +17590,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 677.672 241.3 90)
 			(effects
 				(font
@@ -17556,7 +17626,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R35")
+					(reference "R26")
 					(unit 1)
 				)
 			)
@@ -17572,7 +17642,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5987e6ca-21b3-4621-b315-e10470ea31f1")
-		(property "Reference" "R29"
+		(property "Reference" "R21"
 			(at 650.24 144.7799 0)
 			(effects
 				(font
@@ -17581,7 +17651,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 650.24 147.3199 0)
 			(effects
 				(font
@@ -17590,7 +17660,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 645.922 146.05 90)
 			(effects
 				(font
@@ -17626,7 +17696,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R29")
+					(reference "R21")
 					(unit 1)
 				)
 			)
@@ -17642,7 +17712,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5e13221d-5b0d-42a2-af0b-5462fff262b4")
-		(property "Reference" "R23"
+		(property "Reference" "R7"
 			(at 128.27 342.9 90)
 			(effects
 				(font
@@ -17650,7 +17720,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 128.27 345.44 90)
 			(effects
 				(font
@@ -17658,7 +17728,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 128.27 351.028 90)
 			(effects
 				(font
@@ -17694,7 +17764,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R23")
+					(reference "R7")
 					(unit 1)
 				)
 			)
@@ -17710,7 +17780,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6571ed90-c0e3-471e-abde-24d89f29c407")
-		(property "Reference" "Cin4"
+		(property "Reference" "C7"
 			(at 650.24 224.7899 0)
 			(effects
 				(font
@@ -17719,7 +17789,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1u"
+		(property "Value" "C"
 			(at 650.24 227.3299 0)
 			(effects
 				(font
@@ -17728,7 +17798,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Axial_L3.8mm_D2.6mm_P7.50mm_Horizontal"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 647.3952 229.87 0)
 			(effects
 				(font
@@ -17764,7 +17834,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Cin4")
+					(reference "C7")
 					(unit 1)
 				)
 			)
@@ -17780,7 +17850,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b054500-6e15-4df5-b7a7-e70dc94123d6")
-		(property "Reference" "R19"
+		(property "Reference" "R17"
 			(at 406.4 222.25 90)
 			(effects
 				(font
@@ -17796,7 +17866,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 406.4 230.378 90)
 			(effects
 				(font
@@ -17832,7 +17902,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R19")
+					(reference "R17")
 					(unit 1)
 				)
 			)
@@ -17848,7 +17918,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6b5bf0f9-f2a4-4820-b80d-c5c453087639")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR06"
 			(at 403.86 248.92 0)
 			(effects
 				(font
@@ -17898,7 +17968,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR015")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -17914,7 +17984,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7223c029-a458-4e9e-89e3-bbc81241aa57")
-		(property "Reference" "R24"
+		(property "Reference" "R8"
 			(at 143.51 311.15 90)
 			(effects
 				(font
@@ -17922,7 +17992,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 143.51 313.69 90)
 			(effects
 				(font
@@ -17930,7 +18000,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 143.51 319.278 90)
 			(effects
 				(font
@@ -17966,7 +18036,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R24")
+					(reference "R8")
 					(unit 1)
 				)
 			)
@@ -17982,7 +18052,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "75016334-4dbf-42ec-aad6-1e0fd953d953")
-		(property "Reference" "R28"
+		(property "Reference" "R20"
 			(at 650.24 123.1899 0)
 			(effects
 				(font
@@ -17991,7 +18061,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 650.24 125.7299 0)
 			(effects
 				(font
@@ -18000,7 +18070,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 645.922 124.46 90)
 			(effects
 				(font
@@ -18036,7 +18106,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R28")
+					(reference "R20")
 					(unit 1)
 				)
 			)
@@ -18051,7 +18121,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "78557333-c706-4956-96d8-b4281f3fc3af")
-		(property "Reference" "#FLG013"
+		(property "Reference" "#FLG011"
 			(at 664.21 220.345 0)
 			(effects
 				(font
@@ -18101,7 +18171,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG013")
+					(reference "#FLG011")
 					(unit 1)
 				)
 			)
@@ -18182,7 +18252,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "86cdca85-809d-4ce9-98b2-f8b33f7d0038")
-		(property "Reference" "Cout4"
+		(property "Reference" "C8"
 			(at 716.28 223.5199 0)
 			(effects
 				(font
@@ -18191,7 +18261,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "10u"
+		(property "Value" "C"
 			(at 716.28 226.0599 0)
 			(effects
 				(font
@@ -18200,7 +18270,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Axial_L10.0mm_D6.0mm_P15.00mm_Horizontal"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 713.4352 228.6 0)
 			(effects
 				(font
@@ -18236,7 +18306,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Cout4")
+					(reference "C8")
 					(unit 1)
 				)
 			)
@@ -18268,7 +18338,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical_SMD_Pin1Left"
+		(property "Footprint" "Connector_PinSocket_1.00mm:PinSocket_1x05_P1.00mm_Vertical_SMD_Pin1Left"
 			(at 97.79 189.23 0)
 			(effects
 				(font
@@ -18329,7 +18399,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "88054ee7-cf7f-47b3-ad66-1bde76a2e2b4")
-		(property "Reference" "R27"
+		(property "Reference" "R11"
 			(at 154.94 351.79 90)
 			(effects
 				(font
@@ -18337,7 +18407,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 154.94 354.33 90)
 			(effects
 				(font
@@ -18345,7 +18415,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 154.94 359.918 90)
 			(effects
 				(font
@@ -18381,7 +18451,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R27")
+					(reference "R11")
 					(unit 1)
 				)
 			)
@@ -18397,7 +18467,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8fbfb50e-43e5-4cf3-a37f-bd8b4d30a2a6")
-		(property "Reference" "SW10"
+		(property "Reference" "SW5"
 			(at 617.22 83.82 0)
 			(effects
 				(font
@@ -18413,7 +18483,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
 			(at 617.22 86.36 0)
 			(effects
 				(font
@@ -18449,7 +18519,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "SW10")
+					(reference "SW5")
 					(unit 1)
 				)
 			)
@@ -18465,7 +18535,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "91af7f58-0a5a-467b-825e-37ff06195b06")
-		(property "Reference" "#PWR025"
+		(property "Reference" "#PWR013"
 			(at 684.53 161.29 0)
 			(effects
 				(font
@@ -18515,7 +18585,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR025")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -18531,7 +18601,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9780144f-94ee-400e-9b7f-62e44a7f57a7")
-		(property "Reference" "Cout3"
+		(property "Reference" "C6"
 			(at 615.95 251.4599 0)
 			(effects
 				(font
@@ -18540,7 +18610,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "C"
 			(at 615.95 253.9999 0)
 			(effects
 				(font
@@ -18549,7 +18619,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:CP_Axial_L10.0mm_D6.0mm_P15.00mm_Horizontal"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 613.1052 256.54 0)
 			(effects
 				(font
@@ -18585,7 +18655,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Cout3")
+					(reference "C6")
 					(unit 1)
 				)
 			)
@@ -18601,7 +18671,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9a703179-7eb6-4fce-b668-3ad511ccd535")
-		(property "Reference" "R25"
+		(property "Reference" "R9"
 			(at 143.51 346.71 90)
 			(effects
 				(font
@@ -18609,7 +18679,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 143.51 349.25 90)
 			(effects
 				(font
@@ -18617,7 +18687,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 143.51 354.838 90)
 			(effects
 				(font
@@ -18653,7 +18723,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R25")
+					(reference "R9")
 					(unit 1)
 				)
 			)
@@ -18669,7 +18739,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9c6af86d-8a57-4ffa-acb4-8f2b967b494f")
-		(property "Reference" "Cin3"
+		(property "Reference" "C5"
 			(at 561.34 251.4599 0)
 			(effects
 				(font
@@ -18678,7 +18748,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "100n"
+		(property "Value" "C"
 			(at 561.34 253.9999 0)
 			(effects
 				(font
@@ -18687,7 +18757,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_THT:C_Axial_L3.8mm_D2.6mm_P10.00mm_Horizontal"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 558.4952 256.54 0)
 			(effects
 				(font
@@ -18723,7 +18793,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Cin3")
+					(reference "C5")
 					(unit 1)
 				)
 			)
@@ -18739,7 +18809,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9d5b58a1-9b03-4ca8-b03b-9f33ba1a7f3c")
-		(property "Reference" "BaseResistor6"
+		(property "Reference" "R13"
 			(at 262.89 317.4999 0)
 			(effects
 				(font
@@ -18748,7 +18818,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1kR"
+		(property "Value" "R"
 			(at 262.89 320.0399 0)
 			(effects
 				(font
@@ -18757,7 +18827,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 258.572 318.77 90)
 			(effects
 				(font
@@ -18793,7 +18863,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "BaseResistor6")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -18809,7 +18879,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a8285385-53c1-475c-a27a-36f1dfff401c")
-		(property "Reference" "#PWR018"
+		(property "Reference" "#PWR05"
 			(at 321.31 411.48 0)
 			(effects
 				(font
@@ -18859,7 +18929,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR018")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -18875,7 +18945,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aa0fb4de-35ab-4268-b25b-0b7a312b4e96")
-		(property "Reference" "BaseResistor7"
+		(property "Reference" "R14"
 			(at 264.16 358.1399 0)
 			(effects
 				(font
@@ -18884,7 +18954,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1kR"
+		(property "Value" "R"
 			(at 264.16 360.6799 0)
 			(effects
 				(font
@@ -18893,7 +18963,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 259.842 359.41 90)
 			(effects
 				(font
@@ -18929,7 +18999,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "BaseResistor7")
+					(reference "R14")
 					(unit 1)
 				)
 			)
@@ -18945,7 +19015,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "acc26602-fc18-4596-917f-d94c8492d276")
-		(property "Reference" "U7"
+		(property "Reference" "U6"
 			(at 673.1 215.9 0)
 			(effects
 				(font
@@ -19001,7 +19071,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "U7")
+					(reference "U6")
 					(unit 1)
 				)
 			)
@@ -19017,7 +19087,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2f15433-de84-479c-afa3-2acc6ae1e8df")
-		(property "Reference" "#PWR020"
+		(property "Reference" "#PWR07"
 			(at 589.28 148.59 0)
 			(effects
 				(font
@@ -19067,7 +19137,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR020")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -19083,7 +19153,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b2f5eced-d175-4df3-ac08-308ec2e9860f")
-		(property "Reference" "#PWR017"
+		(property "Reference" "#PWR04"
 			(at 321.31 364.49 0)
 			(effects
 				(font
@@ -19133,7 +19203,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR017")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -19149,7 +19219,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b533cc8c-7b5b-442d-bcd0-22fe02a0f7ec")
-		(property "Reference" "#PWR022"
+		(property "Reference" "#PWR09"
 			(at 591.82 124.46 0)
 			(effects
 				(font
@@ -19199,7 +19269,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR022")
+					(reference "#PWR09")
 					(unit 1)
 				)
 			)
@@ -19215,7 +19285,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "baf8d0df-ee0b-48ce-a006-91da4d3b277b")
-		(property "Reference" "Q6"
+		(property "Reference" "Q2"
 			(at 311.15 308.6099 0)
 			(effects
 				(font
@@ -19233,7 +19303,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 311.15 307.34 0)
 			(effects
 				(font
@@ -19272,7 +19342,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Q6")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -19288,7 +19358,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bc5164c8-34b1-4105-9748-975ed41cf0bd")
-		(property "Reference" "BaseResistor8"
+		(property "Reference" "R15"
 			(at 264.16 396.2399 0)
 			(effects
 				(font
@@ -19297,7 +19367,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "1kR"
+		(property "Value" "R"
 			(at 264.16 398.7799 0)
 			(effects
 				(font
@@ -19306,7 +19376,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 259.842 397.51 90)
 			(effects
 				(font
@@ -19342,7 +19412,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "BaseResistor8")
+					(reference "R15")
 					(unit 1)
 				)
 			)
@@ -19358,7 +19428,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bf66a49f-4480-4da2-b4e7-845b98a9edc3")
-		(property "Reference" "Q7"
+		(property "Reference" "Q3"
 			(at 312.42 349.2499 0)
 			(effects
 				(font
@@ -19376,7 +19446,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 312.42 347.98 0)
 			(effects
 				(font
@@ -19415,7 +19485,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Q7")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -19430,7 +19500,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c253107d-29d3-4e29-a6b0-cc30a3a234a8")
-		(property "Reference" "#FLG06"
+		(property "Reference" "#FLG04"
 			(at 316.23 327.025 0)
 			(effects
 				(font
@@ -19480,7 +19550,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG06")
+					(reference "#FLG04")
 					(unit 1)
 				)
 			)
@@ -19496,7 +19566,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c7ba3475-cac5-4fe7-b269-c6161d4225e6")
-		(property "Reference" "SW9"
+		(property "Reference" "SW4"
 			(at 615.95 115.57 0)
 			(effects
 				(font
@@ -19512,7 +19582,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
 			(at 615.95 118.11 0)
 			(effects
 				(font
@@ -19548,7 +19618,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "SW9")
+					(reference "SW4")
 					(unit 1)
 				)
 			)
@@ -19564,7 +19634,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8773be6-84e0-4072-a65e-501e25a942ae")
-		(property "Reference" "R20"
+		(property "Reference" "R4"
 			(at 97.79 328.93 90)
 			(effects
 				(font
@@ -19572,7 +19642,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 97.79 331.47 90)
 			(effects
 				(font
@@ -19580,7 +19650,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 97.79 337.058 90)
 			(effects
 				(font
@@ -19616,7 +19686,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R20")
+					(reference "R4")
 					(unit 1)
 				)
 			)
@@ -19632,7 +19702,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c9d43745-b37d-4623-8127-c9f764433706")
-		(property "Reference" "SW12"
+		(property "Reference" "SW7"
 			(at 622.3 200.66 0)
 			(effects
 				(font
@@ -19648,7 +19718,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB"
+		(property "Footprint" "Button_Switch_THT:SW_PUSH_6mm_H13mm"
 			(at 622.3 207.01 0)
 			(effects
 				(font
@@ -19684,7 +19754,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "SW12")
+					(reference "SW7")
 					(unit 1)
 				)
 			)
@@ -19700,7 +19770,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb2eb2a3-2c91-4bfa-b942-434bb4d0f267")
-		(property "Reference" "#PWR021"
+		(property "Reference" "#PWR08"
 			(at 589.28 179.07 0)
 			(effects
 				(font
@@ -19750,7 +19820,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#PWR021")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -19766,7 +19836,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d93d7ae6-1b4e-4049-bc34-286b478c63d4")
-		(property "Reference" "U5"
+		(property "Reference" "U3"
 			(at 214.63 321.31 0)
 			(effects
 				(font
@@ -19848,7 +19918,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "U5")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -19864,7 +19934,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dc60e826-0e98-4a45-aef2-40db2fb48561")
-		(property "Reference" "R30"
+		(property "Reference" "R22"
 			(at 651.51 91.4399 0)
 			(effects
 				(font
@@ -19873,7 +19943,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 651.51 93.9799 0)
 			(effects
 				(font
@@ -19882,7 +19952,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 647.192 92.71 90)
 			(effects
 				(font
@@ -19918,7 +19988,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R30")
+					(reference "R22")
 					(unit 1)
 				)
 			)
@@ -19933,7 +20003,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dfce8fab-3df0-418b-990e-aeebef839566")
-		(property "Reference" "#FLG012"
+		(property "Reference" "#FLG010"
 			(at 635 280.035 0)
 			(effects
 				(font
@@ -19983,7 +20053,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "#FLG012")
+					(reference "#FLG010")
 					(unit 1)
 				)
 			)
@@ -19999,7 +20069,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e84b0cc7-163b-4749-8207-aaa43c45b5f3")
-		(property "Reference" "Q8"
+		(property "Reference" "Q4"
 			(at 312.42 387.3499 0)
 			(effects
 				(font
@@ -20017,7 +20087,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 312.42 386.08 0)
 			(effects
 				(font
@@ -20056,7 +20126,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Q8")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -20071,7 +20141,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eac57659-cf20-4472-b3e9-eaaa5a16847c")
-		(property "Reference" "R22"
+		(property "Reference" "R6"
 			(at 119.126 341.376 90)
 			(effects
 				(font
@@ -20079,7 +20149,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "R"
 			(at 119.634 343.408 90)
 			(effects
 				(font
@@ -20087,7 +20157,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Vertical"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 119.38 343.662 90)
 			(effects
 				(font
@@ -20123,7 +20193,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R22")
+					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -20154,7 +20224,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_CLIFF_FC681465S_SMT_Horizontal"
+		(property "Footprint" "Connector_BarrelJack:BarrelJack_Horizontal"
 			(at 542.29 221.996 0)
 			(effects
 				(font
@@ -20206,7 +20276,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f9a44567-224b-4c7b-ad79-b1112572371c")
-		(property "Reference" "R18"
+		(property "Reference" "R16"
 			(at 406.4 218.44 90)
 			(effects
 				(font
@@ -20222,7 +20292,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 406.4 226.568 90)
 			(effects
 				(font
@@ -20258,7 +20328,7 @@
 		(instances
 			(project ""
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R18")
+					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -20274,7 +20344,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fa2b433c-9d51-497a-967a-9b156421bb25")
-		(property "Reference" "R34"
+		(property "Reference" "R25"
 			(at 669.29 240.0299 0)
 			(effects
 				(font
@@ -20283,7 +20353,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "240R"
+		(property "Value" "R"
 			(at 669.29 242.5699 0)
 			(effects
 				(font
@@ -20292,7 +20362,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal"
+		(property "Footprint" "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P2.54mm_Vertical"
 			(at 664.972 241.3 90)
 			(effects
 				(font
@@ -20328,7 +20398,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "R34")
+					(reference "R25")
 					(unit 1)
 				)
 			)
@@ -20344,7 +20414,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fd574529-2d62-44e5-bb81-188e04e18174")
-		(property "Reference" "Q5"
+		(property "Reference" "Q1"
 			(at 229.87 368.2999 0)
 			(effects
 				(font
@@ -20362,7 +20432,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_THT:TO-92"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 229.87 367.03 0)
 			(effects
 				(font
@@ -20401,7 +20471,7 @@
 		(instances
 			(project "vending_machine_pcb"
 				(path "/768977ac-7e13-4b05-a33c-a5d6b2881a98/1986c6be-2603-4289-88d2-a50e32ae10dc"
-					(reference "Q5")
+					(reference "Q1")
 					(unit 1)
 				)
 			)
