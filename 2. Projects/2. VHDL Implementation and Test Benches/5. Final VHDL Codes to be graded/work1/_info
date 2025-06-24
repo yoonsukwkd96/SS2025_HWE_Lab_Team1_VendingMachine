@@ -1,0 +1,315 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/zfw/VHDL_VendingMachineProject
+Ecoin_handler
+Z0 w1750760873
+Z1 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 16
+Z4 dC:/Users/zfw/VHDL_VendingMachineProject/work1
+Z5 8C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler.vhd
+Z6 FC:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler.vhd
+l0
+L5 1
+V[M0eHBBBGD<oeBjOnFgJi0
+!s100 Ma@K6=FQFEkb;BRYeE6Pi3
+Z7 OV;C;2020.1;71
+32
+Z8 !s110 1750760876
+!i10b 1
+Z9 !s108 1750760876.000000
+Z10 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler.vhd|
+Z11 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler.vhd|
+!i113 1
+Z12 o-work work1 -2002 -explicit
+Z13 tExplicit 1 CvgOpt 0
+Abehavioral
+R1
+R2
+R3
+Z14 DEx4 work 12 coin_handler 0 22 [M0eHBBBGD<oeBjOnFgJi0
+!i122 16
+l19
+L14 32
+VYCiPPDikdQQcIT>WOlkY^1
+!s100 [2l[eW<;LJFFU73WNkz<Z0
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Ecoin_handler_tb
+Z15 w1750769389
+R1
+R2
+R3
+!i122 21
+R4
+Z16 8C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd
+Z17 FC:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd
+l0
+L5 1
+V5ZOR>oGe8E14N`_O_c>YK0
+!s100 N2CM2WWz?ioOTJ^]^QF6O3
+R7
+32
+Z18 !s110 1750769395
+!i10b 1
+Z19 !s108 1750769394.000000
+Z20 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd|
+!s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 15 coin_handler_tb 0 22 5ZOR>oGe8E14N`_O_c>YK0
+!i122 21
+l32
+L8 82
+Vdmb0cUKdj?K[8IeP5AM3E3
+!s100 j6<c_ZGTQD`4QgQ5>X4SQ3
+R7
+32
+R18
+!i10b 1
+R19
+R20
+Z21 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd|
+!i113 1
+R12
+R13
+Edisplay_manager
+Z22 w1750760850
+R1
+R2
+R3
+!i122 14
+R4
+Z23 8C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager.vhd
+Z24 FC:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager.vhd
+l0
+L5 1
+VbjZzTXKbTlfzSchMf[oU=1
+!s100 nUU:4W>n=MF=D`PgCha>11
+R7
+32
+Z25 !s110 1750760856
+!i10b 1
+Z26 !s108 1750760856.000000
+Z27 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager.vhd|
+Z28 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+Z29 DEx4 work 15 display_manager 0 22 bjZzTXKbTlfzSchMf[oU=1
+!i122 14
+l23
+L16 64
+V@@lcSNM@22ZZh:E6;8`<m1
+!s100 ^9n7;4ZZ0hd]h3LzedWZR0
+R7
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R12
+R13
+Edisplay_manager_tb
+Z30 w1750768288
+R1
+R2
+R3
+!i122 20
+R4
+Z31 8C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager_TB.vhd
+Z32 FC:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager_TB.vhd
+l0
+L5 1
+VOPLi11BLHWZg?:H?NPEI:2
+!s100 5B13eCXJPDhVS[h`5OXV=0
+R7
+32
+Z33 !s110 1750768293
+!i10b 1
+Z34 !s108 1750768293.000000
+Z35 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager_TB.vhd|
+Z36 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager_TB.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 18 display_manager_tb 0 22 OPLi11BLHWZg?:H?NPEI:2
+!i122 20
+l43
+L8 91
+V9WM:C33la^;6M?If=Ha>D1
+!s100 35_nIXk1=@>^[Q_[fH`?G0
+R7
+32
+R33
+!i10b 1
+R34
+R35
+R36
+!i113 1
+R12
+R13
+Efsm_controller
+Z37 w1750760759
+R1
+R2
+R3
+!i122 12
+R4
+Z38 8C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller.vhd
+Z39 FC:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller.vhd
+l0
+L5 1
+V8K>L^YEEOBddA^?=CBUQ11
+!s100 T9RCc0gVbT?H[NUJGbIEY0
+R7
+32
+Z40 !s110 1750760763
+!i10b 1
+Z41 !s108 1750760763.000000
+Z42 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller.vhd|
+Z43 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+Z44 DEx4 work 14 fsm_controller 0 22 8K>L^YEEOBddA^?=CBUQ11
+!i122 12
+l50
+L17 159
+V3;M@iFUK;P4Fd=>_6_m?G1
+!s100 Z8d]go:^[UWVhfg132Hg72
+R7
+32
+R40
+!i10b 1
+R41
+R42
+R43
+!i113 1
+R12
+R13
+Efsm_controller_tb
+Z45 w1750767253
+R1
+R2
+R3
+!i122 18
+R4
+Z46 8C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller_TB.vhd
+Z47 FC:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller_TB.vhd
+l0
+L5 1
+V[ihPGI8ec8mg6TnV2fCn41
+!s100 1?KHfiKgjZW3:[jDcB?2G2
+R7
+32
+Z48 !s110 1750767257
+!i10b 1
+Z49 !s108 1750767256.000000
+Z50 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller_TB.vhd|
+Z51 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller_TB.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R1
+R2
+R3
+DEx4 work 17 fsm_controller_tb 0 22 [ihPGI8ec8mg6TnV2fCn41
+!i122 18
+l41
+L8 133
+Veh^XH_9zGNLieoIg?aSP53
+!s100 n4oZZJL_EG9V9PfhH72VI0
+R7
+32
+R48
+!i10b 1
+R49
+R50
+R51
+!i113 1
+R12
+R13
+Evendingmachine_top
+Z52 w1750760586
+R1
+R2
+R3
+!i122 10
+R4
+Z53 8C:/Users/zfw/VHDL_VendingMachineProject/work1/VendingMachine_Top.vhd
+Z54 FC:/Users/zfw/VHDL_VendingMachineProject/work1/VendingMachine_Top.vhd
+l0
+L5 1
+Vf>GXFQT^ZPig7_Ee`6<UU2
+!s100 Y[?]c0dMfPU0_gYfGESWb1
+R7
+32
+Z55 !s110 1750760590
+!i10b 1
+Z56 !s108 1750760590.000000
+Z57 !s90 -reportprogress|300|-work|work1|-2002|-explicit|-stats=none|C:/Users/zfw/VHDL_VendingMachineProject/work1/VendingMachine_Top.vhd|
+Z58 !s107 C:/Users/zfw/VHDL_VendingMachineProject/work1/VendingMachine_Top.vhd|
+!i113 1
+R12
+R13
+Abehavioral
+R29
+R14
+R44
+R1
+R2
+R3
+DEx4 work 18 vendingmachine_top 0 22 f>GXFQT^ZPig7_Ee`6<UU2
+!i122 10
+l26
+L22 38
+VcjMISU0TH`c]D]PEe6W^W2
+!s100 Z7jTS<Q9gP`mmLY5:Yd0l0
+R7
+32
+R55
+!i10b 1
+R56
+R57
+R58
+!i113 1
+R12
+R13

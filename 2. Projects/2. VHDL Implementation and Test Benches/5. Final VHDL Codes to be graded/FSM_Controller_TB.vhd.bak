@@ -1,0 +1,144 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity FSM_Controller_TB is 
+end FSM_Controller_TB;
+
+architecture behavioral of FSM_Controller_TB is
+
+	component FSM_Controller is
+		port (
+			clk 		: in std_logic;
+			reset 		: in std_logic;
+			BTNC 		: in std_logic;
+			SW 		: in std_logic_vector(2 downto 0);
+			inserted_amount : in unsigned(13 downto 0);
+			LED 		: out std_logic_vector(3 downto 0);
+			display_text 	: out std_logic_vector(63 downto 0)
+		);
+	end component;
+
+	signal clk_TB			: std_logic := '0';
+	signal reset_TB			: std_logic := '0';
+	signal BTNC_TB			: std_logic := '0';
+	signal SW_TB			: std_logic_vector(2 downto 0) := (others => '0');
+	signal inserted_amount_TB	: unsigned(13 downto 0) := (others => '0');
+	signal LED_TB			: std_logic_vector(3 downto 0);
+	signal display_text_TB		: std_logic_vector(63 downto 0);
+
+	constant CLK_PERIOD : time := 10 ns;
+	
+	function to_string(vec : std_logic_vector) return string is
+		variable s : string(1 to vec'length/8);
+	begin
+		for i in 0 to s'length - 1 loop
+			s(i+1) := character'val(to_integer(unsigned(vec(63 - i*8 downto 56 - i*8))));
+		end loop;
+		return s;
+	end function;
+
+begin
+
+	DUT: FSM_Controller
+		port map( 
+			clk => clk_TB,
+			reset => reset_TB,
+			BTNC => BTNC_TB,
+			SW => SW_TB,
+			inserted_amount =>inserted_amount_TB,
+			LED => LED_TB
+			display_text => display_text_TB
+		);
+
+	clk_process : process
+	begin
+		while true loop
+			clk_TB <= '0';
+			wait for CLK_PERIOD / 2;
+			clk_TB <= '1';
+			wait for CLK_PERIOD / 2;
+		end loop;
+	end process;
+
+	stimulate_process: process
+	begin
+		-- Initial Reset
+		reset_TB <= '1'; wait for CLK_PERIOD * 2; reset_TB <= '0'; wait for CLK_PERIOD * 2;
+
+
+		-- State Transtion Verification
+		-- Test Case 1: IDLE --> DISPLAY
+		BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+
+		-- Test Case 2: DISPLAY (invalid switch: SW = "000")
+		SW_TB <= "000"; BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "0010" report "Unexpected state transition on invalid switch" severity error;
+	
+		-- Test Case 3: DISPLAY --> INSERT (valid switch: SW = "001")
+		SW_TB <= "001"; BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "0100" report "Failed to transition to INSERT" severity error;
+
+		-- Test Case 4: INSERT with not enough money
+		inserted_amount_TB <= to_unsigned(50,14); BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "0100" report "Should not transition with insufficient money" severity error;
+
+		-- Test Case 5: INSERT --> DISPENSE with enough money
+		inserted_amount_TB <= to_unsigned(130,14); BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "1000" report "Failed to tranistion to DISPENSE" severity error;
+
+		-- Test Case 6: DISPENSE with invalid switch which is on
+		SW_TB <= "001"; BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "1000" report "Should not transition to IDLE when switch is ON" severity error;
+
+		-- Test Case 7: DISPENSE --> IDLE with the swtich off
+		SW_TB <= "000"; BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "0001" report "Failed to transition to IDLE" severity error;
+
+
+		-- DISPLAY Content Verification
+		-- Test Case 8: IDLE --> DISPLAY
+		BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+
+		-- Test Case 9: Display Item 1 Verification
+		SW_TB <= "001"; wait for CLK_PERIOD * 2;
+		assert to_string(display_text_TB) = "colA0130" report "Wrong DISPLAY text for 1st item" severity error;
+
+		-- Test Case 10: Display Item 2 Verification
+		SW_TB <= "010"; wait for CLK_PERIOD * 2;
+		assert to_string(display_text_TB) = "bEEr0150" report "Wrong DISPLAY text for 2nd item" severity error;
+
+		-- Test Case 11: Display Item 3 Verification
+		SW_TB <= "100"; wait for CLK_PERIOD * 2;
+		assert to_string(display_text_TB) = "h2o 0090" report "Wrong DISPLAY text for 3rd item" severity error;
+
+
+		-- INSERT Content Verification
+		-- Test Case 12: DISPLAY to INSERT (BTNC pressed), insert item 3 display verification and insert coin display verification
+		BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		inserted_amount_TB <= to_unsigned(50,14); wait for CLK_PERIOD * 2;
+		assert to_string(display_text_TB)(1 to 4) = "0090" report "Item price is incorrect in INSERT" severity error;
+		assert to_string(display_text_TB)(5 to 8) = "0050" report "Inserted Coin is incorrect in INSERT" severity error;
+
+		-- Test Case 13: In the state DISPENSE shows correct change, inserted coin is 150, change should be 60.
+		inserted_amount_TB <= to_unsigned(150,14); BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "1000" report "State transition to DISPENSE was not successful" severity error;
+		assert to_string(display_text_TB)(1 to 4) = "chgE" report "Missing chgE prefix" severity error;
+		assert to_string(display_text_TB)(5 to 8) = "0060" report "Wrong Change Value" severity error;
+
+		-- Test Case 14: Attempt to finish the entire vending machine simulation with switch is still ON on DISPENSE state
+		BTNC_TB <= '1'; wait for CLK_PERIOD * 2; BTNC_TB <= '0'; wait for CLK_PERIOD * 2;
+		assert LED_TB /= "0001" report "FSM Transition from DISPENSE to IDLE despite a switch being ON" severity error;
+
+		-- Test Case 15: Turn off switch and press BTNC to go to IDLE
+		SW_TB <= "000"; BTNC_TB <= '1'; wait for CLK_PERIOD; BTNC_TB <= '0'; wait for CLK_PERIOD * 5;
+		assert LED_TB = "0001" report "FSM did not transition to IDLE after swtich off" severity error;
+
+		report "FSM_Controller test bench completed" severity note;
+		wait;
+	end process;
+end behavioral;
+
+
+
+

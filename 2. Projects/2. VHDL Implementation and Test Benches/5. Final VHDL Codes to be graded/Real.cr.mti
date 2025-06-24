@@ -1,0 +1,67 @@
+C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler_TB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Coin_Handler_TB
+-- Compiling architecture behavioral of Coin_Handler_TB
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Display_Manager
+-- Compiling architecture behavioral of Display_Manager
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager_TB.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/Display_Manager_TB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Display_Manager_TB
+-- Compiling architecture behavioral of Display_Manager_TB
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity FSM_Controller
+-- Compiling architecture behavioral of FSM_Controller
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller_TB.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/FSM_Controller_TB.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity FSM_Controller_TB
+-- Compiling architecture behavioral of FSM_Controller_TB
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/work1/VendingMachine_Top.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/VendingMachine_Top.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity VendingMachine_Top
+-- Compiling architecture behavioral of VendingMachine_Top
+-- Loading entity FSM_Controller
+-- Loading entity Coin_Handler
+-- Loading entity Display_Manager
+
+} {} {}} C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler.vhd {1 {vcom -work work1 -2002 -explicit -stats=none C:/Users/zfw/VHDL_VendingMachineProject/work1/Coin_Handler.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity Coin_Handler
+-- Compiling architecture behavioral of Coin_Handler
+
+} {} {}}
