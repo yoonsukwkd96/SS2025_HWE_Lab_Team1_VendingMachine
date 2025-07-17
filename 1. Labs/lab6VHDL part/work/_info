@@ -1,0 +1,279 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/lab4
+Ebcd_to_7seg
+Z0 w1748938598
+Z1 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z2 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 47
+Z3 dD:/lab5
+Z4 8D:/lab2/BCD_to_7seg.vhd
+Z5 FD:/lab2/BCD_to_7seg.vhd
+l0
+L4 1
+VADIA@R_j[YK7Ng[]C??0[3
+!s100 0z[0=AZ>9;Pfi:n_c131;1
+Z6 OV;C;2020.1;71
+32
+Z7 !s110 1748939440
+!i10b 1
+Z8 !s108 1748939440.000000
+Z9 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/lab2/BCD_to_7seg.vhd|
+Z10 !s107 D:/lab2/BCD_to_7seg.vhd|
+!i113 1
+Z11 o-work work -2002 -explicit
+Z12 tExplicit 1 CvgOpt 0
+Abehavior
+R1
+R2
+DEx4 work 11 bcd_to_7seg 0 22 ADIA@R_j[YK7Ng[]C??0[3
+!i122 47
+l18
+L17 17
+V=gkOk=k@n?2POGO^BL5b71
+!s100 XkLg7Wg=QFJ`I1ZU1[H_C2
+R6
+32
+R7
+!i10b 1
+R8
+R9
+R10
+!i113 1
+R11
+R12
+Eclk_divider
+Z13 w1748334433
+!i122 43
+R3
+Z14 8D:/lab5/clock divider.vhd
+Z15 FD:/lab5/clock divider.vhd
+l0
+L1 1
+V`<g^GKiA:6o;J1fzCG=ol2
+!s100 KcDY9`X>z]`Gj5_?@JIJY1
+R6
+32
+Z16 !s110 1748939439
+!i10b 1
+Z17 !s108 1748939439.000000
+Z18 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/lab5/clock divider.vhd|
+Z19 !s107 D:/lab5/clock divider.vhd|
+!i113 1
+R11
+R12
+Abehavior
+Z20 DEx4 work 11 clk_divider 0 22 `<g^GKiA:6o;J1fzCG=ol2
+!i122 43
+l12
+L9 18
+VGzQ91@Z46L;TBZ;B1N2950
+!s100 kVBO^O3HTUMTo5hI3DB3D2
+R6
+32
+R16
+!i10b 1
+R17
+R18
+R19
+!i113 1
+R11
+R12
+Ecounter_display_in_7seg
+Z21 w1748939533
+Z22 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R1
+R2
+!i122 49
+R3
+Z23 8D:/lab5/counter_display_in_7seg.vhd
+Z24 FD:/lab5/counter_display_in_7seg.vhd
+l0
+L5 1
+VnZXS^1ULGD0Ejh7HRWj7?0
+!s100 ;2X=T;92W9hbH]VGfm47F0
+R6
+32
+Z25 !s110 1748939545
+!i10b 1
+Z26 !s108 1748939545.000000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/lab5/counter_display_in_7seg.vhd|
+Z28 !s107 D:/lab5/counter_display_in_7seg.vhd|
+!i113 1
+R11
+R12
+Astructural
+R22
+R1
+R2
+DEx4 work 23 counter_display_in_7seg 0 22 nZXS^1ULGD0Ejh7HRWj7?0
+!i122 49
+l66
+L16 98
+V`9_[ol^Ke[j_8MH1n75oc3
+!s100 c:[o[Z=T8Ik6l=lTbnCfD1
+R6
+32
+R25
+!i10b 1
+R26
+R27
+R28
+!i113 1
+R11
+R12
+Efinal_structural
+w1748939435
+R22
+R1
+R2
+!i122 48
+R3
+R23
+R24
+l0
+L5 1
+VVeYSZX<dEHRi4?G0OnCWH1
+!s100 :AnbZ^M819`mo^P<PX`mR0
+R6
+32
+R7
+!i10b 1
+R8
+R27
+R28
+!i113 1
+R11
+R12
+Esevensegmentcontroller
+Z29 w1748939297
+R22
+R1
+R2
+!i122 46
+R3
+Z30 8D:/lab5/7segment_clock_for_fpga_A7.vhd
+Z31 FD:/lab5/7segment_clock_for_fpga_A7.vhd
+l0
+L5 1
+VTz`W3kX87H?_6>6bl^DEH3
+!s100 ^1IejW9K4gUlL02nEiS_[0
+R6
+32
+R7
+!i10b 1
+R8
+Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/lab5/7segment_clock_for_fpga_A7.vhd|
+Z33 !s107 D:/lab5/7segment_clock_for_fpga_A7.vhd|
+!i113 1
+R11
+R12
+Abehavioural
+R22
+R1
+R2
+DEx4 work 22 sevensegmentcontroller 0 22 Tz`W3kX87H?_6>6bl^DEH3
+!i122 46
+l17
+L14 44
+VTTKLQ]Yli4Pk@zmcRCV5J2
+!s100 DbX6<O2;;;PF`bUPIKK[N2
+R6
+32
+R7
+!i10b 1
+R8
+R32
+R33
+!i113 1
+R11
+R12
+Etb_clk_divider
+Z34 w1748334319
+!i122 44
+R3
+Z35 8D:/lab5/TB_clk.vhd
+Z36 FD:/lab5/TB_clk.vhd
+l0
+L1 1
+V`C[6@jj=cMWCSVX`LO4ZG3
+!s100 RKQ:3aS@?:a8IH[6U;6T]0
+R6
+32
+R16
+!i10b 1
+R17
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/lab5/TB_clk.vhd|
+Z38 !s107 D:/lab5/TB_clk.vhd|
+!i113 1
+R11
+R12
+Abehavior
+R20
+DEx4 work 14 tb_clk_divider 0 22 `C[6@jj=cMWCSVX`LO4ZG3
+!i122 44
+l13
+L4 47
+VUK@55GF?88eiXZganIekg3
+!s100 _QbEKHSWU3DE20SDBYe;32
+R6
+32
+R16
+!i10b 1
+R17
+R37
+R38
+!i113 1
+R11
+R12
+Eup_down_counter_one_proc
+Z39 w1748336365
+R22
+R1
+R2
+!i122 45
+R3
+Z40 8D:/lab5/counterfsm.vhd
+Z41 FD:/lab5/counterfsm.vhd
+l0
+L5 1
+VV6kQl@FPVQHYGhUFJ?>n81
+!s100 d3iCMUFlg;TP::H8A1@WF2
+R6
+32
+R16
+!i10b 1
+R17
+Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/lab5/counterfsm.vhd|
+Z43 !s107 D:/lab5/counterfsm.vhd|
+!i113 1
+R11
+R12
+Abehavioral
+R22
+R1
+R2
+DEx4 work 24 up_down_counter_one_proc 0 22 V6kQl@FPVQHYGhUFJ?>n81
+!i122 45
+l19
+L15 32
+VeI3Nk07>57DEE=:Yb92RW1
+!s100 A^mGE`VicOnO0TY0^60<f2
+R6
+32
+R16
+!i10b 1
+R17
+R42
+R43
+!i113 1
+R11
+R12
