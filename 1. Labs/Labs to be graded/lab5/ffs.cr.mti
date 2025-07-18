@@ -1,0 +1,49 @@
+D:/lab4/DFF_testbech.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/lab4/DFF_testbech.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity test
+-- Compiling architecture bench1 of test
+
+} {} {}} D:/lab4/JKFF.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/lab4/JKFF.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity JKff
+-- Compiling architecture behavior of JKff
+
+} {} {}} D:/lab4/8bitshiftregister.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/lab4/8bitshiftregister.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity ShiftRegister8
+-- Compiling architecture Structural of ShiftRegister8
+
+} {} {}} D:/lab4/asynchronous_counter.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/lab4/asynchronous_counter.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity a_counter
+-- Compiling architecture structural of a_counter
+
+} {} {}} D:/lab4/DFF.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/lab4/DFF.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity DFF
+-- Compiling architecture Behavioral of DFF
+
+} {} {}} D:/lab4/8bitregister.vhd {1 {vcom -work work -2002 -explicit -stats=none D:/lab4/8bitregister.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity register8bit
+-- Compiling architecture behavior of register8bit
+
+} {} {}}

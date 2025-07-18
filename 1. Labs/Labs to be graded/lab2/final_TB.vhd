@@ -1,0 +1,51 @@
+ENTITY test IS
+END test;
+
+ARCHITECTURE bench3 OF test IS
+
+    -- Component declaration of the Unit Under Test (UUT)
+    COMPONENT BCD_Addder_display
+    port(C1: in bit_vector(3 downto 0);
+     C2: in bit_vector(3 downto 0);
+     D1: out bit_vector(6 downto 0);
+     D2: out bit_vector(6 downto 0));
+end component;
+
+    -- Signals to connect to the UUT
+    SIGNAL C1tb    : BIT_VECTOR(3 DOWNTO 0);
+    SIGNAL C2tb    : BIT_VECTOR(3 DOWNTO 0);
+    SIGNAL D1tb    : BIT_VECTOR(6 DOWNTO 0);
+    SIGNAL D2tb    : BIT_VECTOR(6 DOWNTO 0);
+
+BEGIN
+
+    -- Instantiate the Unit Under Test (UUT)
+    uut: BCD_Addder_display
+        PORT MAP (
+            C1 => C1tb,
+            C2 => C2tb,
+            D1 => D1tb,
+            D2 => D2tb
+        );
+
+    -- Test process
+    PROCESS
+    BEGIN        
+        -- Test case 1: C1 = 0000, C2 = 0000 (should display 0 + 0)
+        C1tb <= "0000"; C2tb <= "0000";
+        WAIT FOR 10 ns; -- Wait for the output to stabilize
+
+        -- Test case 2: C1 = 0001, C2 = 0001 (should display 1 + 1)
+        C1tb <= "0001"; C2tb <= "0001";
+        WAIT FOR 10 ns;
+
+        -- Test case 3: C1 = 0010, C2 = 0011 (should display 2 + 3)
+        C1tb <= "0010"; C2tb <= "0011";
+        WAIT FOR 10 ns;
+
+        
+    END PROCESS;
+
+END bench3;
+
+

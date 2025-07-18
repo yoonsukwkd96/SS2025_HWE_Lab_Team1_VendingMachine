@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1747675621">
+  <File Type="PA-TCL" Name="Top_Display.tcl"/>
+  <File Type="REPORTS-TCL" Name="Top_Display_reports.tcl"/>
+  <File Type="INIT-TIMING" Name="Top_Display_timing_summary_init.rpt"/>
+  <File Type="OPT-DCP" Name="Top_Display_opt.dcp"/>
+  <File Type="OPT-DRC" Name="Top_Display_drc_opted.rpt"/>
+  <File Type="OPT-METHODOLOGY-DRC" Name="Top_Display_methodology_drc_opted.rpt"/>
+  <File Type="OPT-HWDEF" Name="Top_Display.hwdef"/>
+  <File Type="OPT-TIMING" Name="Top_Display_timing_summary_opted.rpt"/>
+  <File Type="OPT-RQA-PB" Name="Top_Display_rqa_opted.pb"/>
+  <File Type="PWROPT-DCP" Name="Top_Display_pwropt.dcp"/>
+  <File Type="PWROPT-DRC" Name="Top_Display_drc_pwropted.rpt"/>
+  <File Type="PWROPT-TIMING" Name="Top_Display_timing_summary_pwropted.rpt"/>
+  <File Type="PLACE-DCP" Name="Top_Display_placed.dcp"/>
+  <File Type="PLACE-IO" Name="Top_Display_io_placed.rpt"/>
+  <File Type="PLACE-CLK" Name="Top_Display_clock_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL" Name="Top_Display_utilization_placed.rpt"/>
+  <File Type="PLACE-UTIL-PB" Name="Top_Display_utilization_placed.pb"/>
+  <File Type="PLACE-CTRL" Name="Top_Display_control_sets_placed.rpt"/>
+  <File Type="PLACE-SIMILARITY" Name="Top_Display_incremental_reuse_placed.rpt"/>
+  <File Type="PLACE-PRE-SIMILARITY" Name="Top_Display_incremental_reuse_pre_placed.rpt"/>
+  <File Type="PLACE-TIMING" Name="Top_Display_timing_summary_placed.rpt"/>
+  <File Type="PLACE-RQA-PB" Name="Top_Display_rqa_placed.pb"/>
+  <File Type="POSTPLACE-PWROPT-DCP" Name="Top_Display_postplace_pwropt.dcp"/>
+  <File Type="POSTPLACE-PWROPT-TIMING" Name="Top_Display_timing_summary_postplace_pwropted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Top_Display_physopt.dcp"/>
+  <File Type="PHYSOPT-DRC" Name="Top_Display_drc_physopted.rpt"/>
+  <File Type="PHYSOPT-TIMING" Name="Top_Display_timing_summary_physopted.rpt"/>
+  <File Type="ROUTE-ERROR-DCP" Name="Top_Display_routed_error.dcp"/>
+  <File Type="ROUTE-DCP" Name="Top_Display_routed.dcp"/>
+  <File Type="ROUTE-BLACKBOX-DCP" Name="Top_Display_routed_bb.dcp"/>
+  <File Type="ROUTE-DRC" Name="Top_Display_drc_routed.rpt"/>
+  <File Type="ROUTE-DRC-PB" Name="Top_Display_drc_routed.pb"/>
+  <File Type="ROUTE-DRC-RPX" Name="Top_Display_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC" Name="Top_Display_methodology_drc_routed.rpt"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Top_Display_methodology_drc_routed.rpx"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Top_Display_methodology_drc_routed.pb"/>
+  <File Type="ROUTE-PWR" Name="Top_Display_power_routed.rpt"/>
+  <File Type="ROUTE-PWR-SUM" Name="Top_Display_power_summary_routed.pb"/>
+  <File Type="ROUTE-PWR-RPX" Name="Top_Display_power_routed.rpx"/>
+  <File Type="ROUTE-STATUS" Name="Top_Display_route_status.rpt"/>
+  <File Type="ROUTE-STATUS-PB" Name="Top_Display_route_status.pb"/>
+  <File Type="ROUTE-TIMINGSUMMARY" Name="Top_Display_timing_summary_routed.rpt"/>
+  <File Type="ROUTE-TIMING-PB" Name="Top_Display_timing_summary_routed.pb"/>
+  <File Type="ROUTE-TIMING-RPX" Name="Top_Display_timing_summary_routed.rpx"/>
+  <File Type="ROUTE-SIMILARITY" Name="Top_Display_incremental_reuse_routed.rpt"/>
+  <File Type="ROUTE-CLK" Name="Top_Display_clock_utilization_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW" Name="Top_Display_bus_skew_routed.rpt"/>
+  <File Type="ROUTE-BUS-SKEW-PB" Name="Top_Display_bus_skew_routed.pb"/>
+  <File Type="ROUTE-BUS-SKEW-RPX" Name="Top_Display_bus_skew_routed.rpx"/>
+  <File Type="ROUTE-RQS-PB" Name="Top_Display_rqs_routed.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-DCP" Name="Top_Display_postroute_physopt.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Top_Display_postroute_physopt_bb.dcp"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING" Name="adder_substractor_timing_summary_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-PB" Name="adder_substractor_timing_summary_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-TIMING-RPX" Name="adder_substractor_timing_summary_postroute_physopted.rpx"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW" Name="adder_substractor_bus_skew_postroute_physopted.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-PB" Name="adder_substractor_bus_skew_postroute_physopted.pb"/>
+  <File Type="POSTROUTE-PHYSOPT-BUS-SKEW-RPX" Name="adder_substractor_bus_skew_postroute_physopted.rpx"/>
+  <File Type="BG-BIT" Name="Top_Display.bit"/>
+  <File Type="BG-BIN" Name="Top_Display.bin"/>
+  <File Type="BITSTR-MSK" Name="Top_Display.msk"/>
+  <File Type="BITSTR-RBT" Name="Top_Display.rbt"/>
+  <File Type="BITSTR-NKY" Name="Top_Display.nky"/>
+  <File Type="BITSTR-BMM" Name="Top_Display_bd.bmm"/>
+  <File Type="BITSTR-MMI" Name="Top_Display.mmi"/>
+  <File Type="PDI-FILE" Name="Top_Display.pdi"/>
+  <File Type="BOOT-PDI-FILE" Name="Top_Display_boot.pdi"/>
+  <File Type="PL-PDI-FILE" Name="Top_Display_pld.pdi"/>
+  <File Type="RCFI_FILE" Name="Top_Display.rcfi"/>
+  <File Type="CFI_FILE" Name="Top_Display.cfi"/>
+  <File Type="RNPI_FILE" Name="Top_Display.rnpi"/>
+  <File Type="NPI_FILE" Name="Top_Display.npi"/>
+  <File Type="RBD_FILE" Name="Top_Display.rbd"/>
+  <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
+  <File Type="BITSTR-LTX" Name="Top_Display.ltx"/>
+  <File Type="BITSTR-SYSDEF" Name="Top_Display.sysdef"/>
+  <File Type="BG-BGN" Name="Top_Display.bgn"/>
+  <File Type="BG-DRC" Name="Top_Display.drc"/>
+  <File Type="RDI-RDI" Name="Top_Display.vdi"/>
+  <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
+  <File Type="ROUTE-RQS" Name="Top_Display_routed.rqs"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS" Name="Top_Display_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
+    <Filter Type="Srcs"/>
+    <File Path="$PPRDIR/../lab2/4bit_Binary_2_BCD.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../lab2/BCD_to_7seg.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../FA.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../Ripple carry Adder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../adder_substractor.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../half adder.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sevencontroller.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../lab1/exercise2fpga.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../BCD/4bit_Binary_2_BCD.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../BCD/BCD_to_7seg.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../adder1/FA.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../adder1/Ripple carry Adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../adder1/adder_substractor.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../adder1/half adder.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../adder1/exercise2fpga.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../BCD/BCD_2_7seg.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../lab2/BCD_2_7seg.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/../lab2/bcdadder_displays_in_7seg.vhd">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="DesignMode" Val="RTL"/>
+      <Option Name="TopModule" Val="Top_Display"/>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
+    <Filter Type="Constrs"/>
+    <File Path="$PSRCDIR/constrs_1/new/cons.xdc">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="ConstrsType" Val="XDC"/>
+    </Config>
+  </FileSet>
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
+    <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/BCD_Calculator_Display.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
+    <Config>
+      <Option Name="TopAutoSet" Val="TRUE"/>
+    </Config>
+  </FileSet>
+  <Strategy Version="1" Minor="2">
+    <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2024"/>
+    <Step Id="init_design"/>
+    <Step Id="opt_design"/>
+    <Step Id="power_opt_design"/>
+    <Step Id="place_design"/>
+    <Step Id="post_place_power_opt_design"/>
+    <Step Id="phys_opt_design"/>
+    <Step Id="route_design"/>
+    <Step Id="post_route_phys_opt_design"/>
+    <Step Id="write_bitstream"/>
+  </Strategy>
+</GenRun>

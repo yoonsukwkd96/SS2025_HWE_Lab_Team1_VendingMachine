@@ -1,0 +1,51 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity ShiftRegister8 is
+    Port (
+        clk   : in  STD_LOGIC;
+        Din   : in  STD_LOGIC;
+        Dout  : out STD_LOGIC_VECTOR(7 downto 0)
+    );
+end ShiftRegister8;
+
+architecture Structural of ShiftRegister8 is
+
+    signal q_sigs  : STD_LOGIC_VECTOR(7 downto 0);
+    signal qn_sigs : STD_LOGIC_VECTOR(7 downto 0);
+    signal d_sigs  : STD_LOGIC_VECTOR(7 downto 0);
+
+    component DFF
+        Port (
+            clk : in STD_LOGIC;
+            D   : in STD_LOGIC;
+            Q   : out STD_LOGIC;
+            Qn  : out STD_LOGIC
+        );
+    end component;
+
+begin
+
+    -- ????????? D
+    d_sigs(0) <= Din;
+
+    -- ???????? Q ?????? D
+    GEN_DFF: for i in 0 to 7 generate
+        DFF_i: DFF port map (
+            clk => clk,
+            D   => d_sigs(i),
+            Q   => q_sigs(i),
+            Qn  => qn_sigs(i)
+        );
+
+        -- ???????? D ???? Q ??
+        if i < 7 generate
+            d_sigs(i+1) <= q_sigs(i);
+        end generate;
+
+    end generate;
+
+    Dout <= q_sigs;
+
+end Structural;
+

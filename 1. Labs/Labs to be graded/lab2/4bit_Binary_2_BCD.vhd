@@ -1,0 +1,21 @@
+entity B2BC is
+port(bin: in bit_vector(3 downto 0);
+     Dout1: out bit_vector(3 downto 0);
+     Dout2: out bit_vector(3 downto 0));
+end B2BC;
+
+architecture behavior of B2BC is
+
+begin
+Dout1 <="0000" when (bin="0000" or bin="0001" or bin="0010" or bin="0011" or bin="0100" or bin="0101" or bin="0110" or bin="0111" or bin="1000" or bin="1001") else"0001";
+Dout2 <= bin   when (bin = "0000" or bin = "0001" or bin = "0010" or bin = "0011" or 
+                             bin = "0100" or bin = "0101" or bin = "0110" or bin = "0111" or 
+                             bin = "1000" or bin = "1001") else
+         "0000" when bin="1010" else
+         "0001" when bin="1011" else
+         "0010" when bin="1100" else  
+         "0011" when bin="1101" else
+         "0100" when bin="1110" else
+         "0101" when bin="1111";
+
+end behavior;
